@@ -1,0 +1,3303 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="color-scheme" content="dark light" />
+<title>TrendMarketdz — سوق رقمي عالمي للمنتجات الرقمية</title>
+<meta name="description" content="TrendMarketdz منصة عالمية لشراء وبيع المنتجات الرقمية: كورسات، قوالب، تطبيقات، كتب إلكترونية، تصاميم وخدمات رقمية مع دعم واتساب +213699861542." />
+
+<style>
+:root{
+--bg0:#070A12;
+--bg1:#0B1220;
+--card: rgba(255,255,255,.06);
+--card2: rgba(255,255,255,.08);
+--stroke: rgba(255,255,255,.12);
+--text:#EAF0FF;
+--muted: rgba(234,240,255,.72);
+--muted2: rgba(234,240,255,.56);
+--shadow: 0 22px 60px rgba(0,0,0,.55);
+--shadow2: 0 12px 30px rgba(0,0,0,.35);
+--r: 18px;
+--r2: 14px;
+--accent1:#7C3AED;
+--accent2:#22C55E;
+--accent3:#06B6D4;
+--warn:#F59E0B;
+--danger:#EF4444;
+--ok:#22C55E;
+
+--glass: blur(14px);
+--max: 1180px;
+--font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+--mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+--focus: 0 0 0 4px rgba(34,197,94,.18), 0 0 0 1px rgba(34,197,94,.35) inset;
+}
+
+*{ box-sizing:border-box; }
+html,body{ height:100%; }
+body{
+margin:0;
+font-family: var(--font);
+color: var(--text);
+background: radial-gradient(1200px 700px at 90% 0%, rgba(124,58,237,.28), transparent 60%),
+radial-gradient(900px 700px at 10% 15%, rgba(6,182,212,.22), transparent 60%),
+radial-gradient(900px 700px at 70% 100%, rgba(34,197,94,.18), transparent 60%),
+linear-gradient(180deg, var(--bg0), var(--bg1));
+overflow-x:hidden;
+}
+
+a{ color:inherit; text-decoration:none; }
+button, input, select, textarea{ font: inherit; color:inherit; }
+::selection{ background: rgba(124,58,237,.35); }
+
+.wrap{ max-width: var(--max); margin:0 auto; padding: 0 18px; }
+.grid{ display:grid; gap: 16px; }
+.row{ display:flex; align-items:center; gap: 12px; }
+.muted{ color: var(--muted); }
+.muted2{ color: var(--muted2); }
+.small{ font-size: 12.5px; }
+.kbd{
+font-family: var(--mono);
+font-size: 12px;
+padding: 4px 8px;
+border-radius: 10px;
+background: rgba(255,255,255,.06);
+border: 1px solid rgba(255,255,255,.12);
+}
+.badge{
+display:inline-flex; align-items:center; gap:8px;
+padding: 8px 12px;
+background: rgba(255,255,255,.06);
+border:1px solid rgba(255,255,255,.12);
+border-radius: 999px;
+box-shadow: 0 10px 30px rgba(0,0,0,.25);
+backdrop-filter: var(--glass);
+-webkit-backdrop-filter: var(--glass);
+}
+.dot{ width:8px; height:8px; border-radius:50%; background: var(--ok); box-shadow: 0 0 0 4px rgba(34,197,94,.18); }
+
+.btn{
+display:inline-flex; align-items:center; justify-content:center; gap: 10px;
+border-radius: 14px;
+padding: 12px 14px;
+border: 1px solid rgba(255,255,255,.14);
+background: rgba(255,255,255,.06);
+backdrop-filter: var(--glass);
+-webkit-backdrop-filter: var(--glass);
+box-shadow: var(--shadow2);
+cursor:pointer;
+transition: transform .12s ease, background .2s ease, border-color .2s ease, box-shadow .2s ease;
+user-select:none;
+touch-action: manipulation;
+position: relative;
+}
+.btn:hover{ transform: translateY(-1px); background: rgba(255,255,255,.085); border-color: rgba(255,255,255,.20); }
+.btn:active{ transform: translateY(0px); }
+.btn:focus-visible{ outline:none; box-shadow: var(--shadow2), var(--focus); }
+.btn.primary{
+border: 0;
+background: linear-gradient(135deg, rgba(124,58,237,.95), rgba(6,182,212,.85));
+box-shadow: 0 18px 48px rgba(124,58,237,.26), 0 18px 50px rgba(6,182,212,.14);
+}
+.btn.primary:hover{ filter: brightness(1.03); }
+.btn.green{
+border:0;
+background: linear-gradient(135deg, rgba(34,197,94,.92), rgba(6,182,212,.78));
+box-shadow: 0 18px 48px rgba(34,197,94,.18);
+}
+.btn.ghost{
+background: rgba(255,255,255,.03);
+border-color: rgba(255,255,255,.12);
+box-shadow:none;
+}
+.btn.icon{ padding: 10px 12px; border-radius: 14px; }
+.btn .shine{
+content:"";
+position:absolute;
+inset:0;
+border-radius: inherit;
+background: radial-gradient(120px 120px at var(--x, 50%) var(--y, 0%), rgba(255,255,255,.25), transparent 60%);
+opacity:0;
+transition: opacity .25s ease;
+pointer-events:none;
+mix-blend-mode: screen;
+}
+.btn.primary .shine{ opacity:.75; }
+.btn:hover .shine{ opacity:1; }
+.btn.ghost .shine{ opacity:.25; }
+
+.card{
+background: rgba(255,255,255,.05);
+border: 1px solid rgba(255,255,255,.11);
+border-radius: var(--r);
+box-shadow: 0 18px 50px rgba(0,0,0,.35);
+backdrop-filter: var(--glass);
+-webkit-backdrop-filter: var(--glass);
+}
+.card.pad{ padding: 18px; }
+.card.soft{
+background: rgba(255,255,255,.04);
+box-shadow: 0 14px 40px rgba(0,0,0,.25);
+}
+
+.topbar{
+position: sticky; top:0;
+z-index: 40;
+background: rgba(7,10,18,.35);
+border-bottom: 1px solid rgba(255,255,255,.08);
+backdrop-filter: blur(18px);
+-webkit-backdrop-filter: blur(18px);
+}
+.nav{
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap: 14px;
+padding: 12px 0;
+}
+.brand{
+display:flex;
+align-items:center;
+gap: 10px;
+min-width: 220px;
+}
+.logo{
+width: 38px; height: 38px;
+border-radius: 12px;
+background: radial-gradient(14px 14px at 25% 25%, rgba(255,255,255,.75), rgba(255,255,255,0) 60%),
+linear-gradient(135deg, rgba(124,58,237,1), rgba(6,182,212,1));
+box-shadow: 0 14px 40px rgba(124,58,237,.22);
+position: relative;
+overflow:hidden;
+}
+.logo:after{
+content:"";
+position:absolute; inset:-60%;
+background: conic-gradient(from 180deg, rgba(255,255,255,.0), rgba(255,255,255,.28), rgba(255,255,255,.0));
+animation: spin 3.5s linear infinite;
+opacity:.8;
+}
+@keyframes spin{ to{ transform: rotate(360deg); } }
+
+.brand h1{
+font-size: 14px; margin:0; line-height: 1.1;
+letter-spacing: .2px;
+}
+.brand p{
+margin:0; font-size: 12px; color: var(--muted2);
+}
+
+.navlinks{
+display:flex; gap: 10px; align-items:center;
+flex:1;
+justify-content:center;
+}
+.navlinks a{
+padding: 10px 10px;
+border-radius: 12px;
+border: 1px solid transparent;
+color: var(--muted);
+transition: background .2s ease, border-color .2s ease, color .2s ease;
+white-space: nowrap;
+}
+.navlinks a:hover{
+background: rgba(255,255,255,.05);
+border-color: rgba(255,255,255,.09);
+color: var(--text);
+}
+
+.navtools{
+display:flex; align-items:center; gap: 10px;
+justify-content:flex-end;
+min-width: 220px;
+}
+
+.pill{
+display:flex; align-items:center; gap: 10px;
+padding: 10px 12px;
+border-radius: 14px;
+border: 1px solid rgba(255,255,255,.12);
+background: rgba(255,255,255,.04);
+backdrop-filter: var(--glass);
+-webkit-backdrop-filter: var(--glass);
+}
+.pill input{
+width: 260px;
+background: transparent;
+border:0;
+outline:none;
+color: var(--text);
+}
+.pill input::placeholder{ color: rgba(234,240,255,.45); }
+.select{
+background: rgba(255,255,255,.04);
+border: 1px solid rgba(255,255,255,.12);
+border-radius: 14px;
+padding: 10px 12px;
+outline:none;
+cursor:pointer;
+max-width: 130px;
+}
+.select:focus-visible{ box-shadow: var(--focus); }
+
+.hero{
+padding: 28px 0 18px;
+position: relative;
+}
+.heroGrid{
+display:grid;
+gap: 18px;
+grid-template-columns: 1.15fr .85fr;
+align-items: stretch;
+}
+.heroTitle{
+font-size: clamp(28px, 4vw, 46px);
+line-height: 1.05;
+margin: 0;
+letter-spacing: -0.8px;
+}
+.gradText{
+background: linear-gradient(135deg, rgba(124,58,237,1), rgba(6,182,212,1), rgba(34,197,94,1));
+-webkit-background-clip: text;
+background-clip:text;
+color: transparent;
+}
+.heroLead{
+margin: 14px 0 0;
+color: var(--muted);
+font-size: 15.5px;
+line-height: 1.8;
+max-width: 60ch;
+}
+.heroCtas{ display:flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; align-items:center; }
+.heroMeta{ margin-top: 14px; display:flex; flex-wrap:wrap; gap: 10px; align-items:center; }
+.stat{
+padding: 10px 12px;
+border-radius: 16px;
+background: rgba(255,255,255,.04);
+border: 1px solid rgba(255,255,255,.10);
+min-width: 148px;
+}
+.stat b{ display:block; font-size: 16px; letter-spacing:.2px; }
+.stat span{ display:block; color: var(--muted2); font-size: 12.5px; margin-top: 2px; }
+
+.heroAside{
+position: relative;
+overflow:hidden;
+}
+.heroAside:before{
+content:"";
+position:absolute; inset:-40%;
+background: radial-gradient(closest-side, rgba(124,58,237,.35), transparent 65%),
+radial-gradient(closest-side, rgba(6,182,212,.25), transparent 60%),
+radial-gradient(closest-side, rgba(34,197,94,.22), transparent 60%);
+transform: rotate(14deg);
+filter: blur(14px);
+opacity: .75;
+pointer-events:none;
+}
+.mock{
+position:relative;
+padding: 18px;
+display:grid;
+gap: 12px;
+}
+.mockHeader{
+display:flex; align-items:center; justify-content:space-between; gap: 12px;
+}
+.chip{
+display:inline-flex; align-items:center; gap: 8px;
+padding: 8px 10px;
+border-radius: 999px;
+border: 1px solid rgba(255,255,255,.12);
+background: rgba(255,255,255,.05);
+color: var(--muted);
+font-size: 12.5px;
+}
+.chip strong{ color: var(--text); font-weight: 650; }
+.bar{
+height: 10px;
+background: rgba(255,255,255,.06);
+border: 1px solid rgba(255,255,255,.10);
+border-radius: 999px;
+overflow:hidden;
+}
+.bar > i{
+display:block; height:100%;
+width: var(--w, 62%);
+background: linear-gradient(90deg, rgba(124,58,237,.95), rgba(6,182,212,.85), rgba(34,197,94,.75));
+border-radius: 999px;
+box-shadow: 0 12px 30px rgba(124,58,237,.18);
+}
+.mockGrid{
+display:grid; gap: 12px;
+grid-template-columns: 1fr 1fr;
+}
+.miniCard{
+padding: 12px;
+border-radius: 16px;
+border: 1px solid rgba(255,255,255,.11);
+background: rgba(255,255,255,.04);
+box-shadow: 0 14px 34px rgba(0,0,0,.25);
+min-height: 104px;
+}
+.miniCard .t{
+display:flex; align-items:center; justify-content:space-between; gap: 10px;
+margin-bottom: 8px;
+}
+.miniCard h4{ margin:0; font-size: 13px; color: var(--muted); font-weight: 650; }
+.miniCard b{ display:block; font-size: 16px; margin-top: 8px; letter-spacing: .2px; }
+.spark{
+width: 28px; height: 28px;
+border-radius: 12px;
+background: radial-gradient(14px 14px at 35% 35%, rgba(255,255,255,.7), rgba(255,255,255,0) 65%),
+linear-gradient(135deg, rgba(124,58,237,1), rgba(6,182,212,1));
+box-shadow: 0 14px 30px rgba(6,182,212,.16);
+}
+
+section{ padding: 22px 0; }
+.sectionHead{
+display:flex; align-items:flex-end; justify-content:space-between; gap: 12px;
+margin-bottom: 12px;
+}
+.sectionHead h2{
+margin:0;
+font-size: 18px;
+letter-spacing: -.2px;
+}
+.sectionHead p{ margin:0; color: var(--muted2); font-size: 13px; }
+
+.features{
+display:grid;
+gap: 12px;
+grid-template-columns: repeat(3, 1fr);
+}
+.feature{
+padding: 16px;
+border-radius: var(--r);
+border: 1px solid rgba(255,255,255,.10);
+background: rgba(255,255,255,.04);
+box-shadow: 0 18px 42px rgba(0,0,0,.22);
+transition: transform .15s ease, border-color .2s ease, background .2s ease;
+min-height: 140px;
+position: relative;
+overflow:hidden;
+}
+.feature:before{
+content:"";
+position:absolute; inset:-60%;
+background: radial-gradient(closest-side, rgba(124,58,237,.16), transparent 65%);
+opacity:.75;
+transform: translate(45%, -30%);
+pointer-events:none;
+}
+.feature:hover{ transform: translateY(-2px); border-color: rgba(255,255,255,.18); background: rgba(255,255,255,.055); }
+.feature .ico{
+width: 44px; height: 44px; border-radius: 16px;
+border: 1px solid rgba(255,255,255,.14);
+background: rgba(255,255,255,.05);
+display:flex; align-items:center; justify-content:center;
+box-shadow: 0 14px 30px rgba(0,0,0,.25);
+margin-bottom: 10px;
+}
+.feature h3{ margin:0; font-size: 15px; letter-spacing: -.2px; }
+.feature p{ margin: 6px 0 0; color: var(--muted); font-size: 13.5px; line-height: 1.75; }
+
+.market{
+display:grid;
+gap: 12px;
+grid-template-columns: 1.25fr .75fr;
+align-items:start;
+}
+
+.filters{
+display:flex; flex-wrap:wrap; gap: 10px;
+align-items:center;
+justify-content:space-between;
+margin-bottom: 10px;
+}
+.tabs{
+display:flex; gap: 8px; flex-wrap:wrap;
+}
+.tab{
+padding: 10px 12px;
+border-radius: 999px;
+border: 1px solid rgba(255,255,255,.12);
+background: rgba(255,255,255,.04);
+color: var(--muted);
+cursor:pointer;
+transition: background .2s ease, border-color .2s ease, transform .12s ease;
+user-select:none;
+}
+.tab:hover{ transform: translateY(-1px); border-color: rgba(255,255,255,.18); }
+.tab.active{
+color: var(--text);
+border: 0;
+background: linear-gradient(135deg, rgba(124,58,237,.85), rgba(6,182,212,.7));
+box-shadow: 0 14px 34px rgba(124,58,237,.18);
+}
+
+.products{
+display:grid;
+gap: 12px;
+grid-template-columns: repeat(2, 1fr);
+}
+.product{
+border-radius: var(--r);
+padding: 14px;
+border: 1px solid rgba(255,255,255,.10);
+background: rgba(255,255,255,.04);
+box-shadow: 0 18px 46px rgba(0,0,0,.25);
+overflow:hidden;
+position: relative;
+transition: transform .15s ease, border-color .2s ease;
+display:flex; flex-direction:column; gap: 10px;
+min-height: 188px;
+}
+.product:hover{ transform: translateY(-2px); border-color: rgba(255,255,255,.18); }
+.thumb{
+height: 110px;
+border-radius: 16px;
+border: 1px solid rgba(255,255,255,.10);
+background:
+radial-gradient(200px 120px at 20% 30%, rgba(124,58,237,.45), transparent 60%),
+radial-gradient(220px 120px at 70% 60%, rgba(6,182,212,.35), transparent 60%),
+linear-gradient(135deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+position: relative;
+overflow:hidden;
+}
+.thumb:after{
+content:"";
+position:absolute; inset:-60%;
+background: conic-gradient(from 220deg, rgba(255,255,255,0), rgba(255,255,255,.18), rgba(255,255,255,0));
+animation: spin 5.2s linear infinite;
+opacity:.7;
+pointer-events:none;
+}
+.product h4{ margin:0; font-size: 14.5px; letter-spacing: -.2px; }
+.metaRow{ display:flex; gap: 10px; flex-wrap:wrap; align-items:center; justify-content:space-between; }
+.metaLeft{ display:flex; gap: 8px; align-items:center; flex-wrap:wrap; color: var(--muted2); font-size: 12.5px; }
+.price{
+display:inline-flex; align-items:baseline; gap: 6px;
+font-weight: 800;
+letter-spacing: .2px;
+}
+.price small{ font-weight: 650; color: var(--muted2); }
+.stars{
+display:inline-flex; gap: 2px; vertical-align: middle;
+}
+.stars i{
+width: 14px; height: 14px;
+display:inline-block;
+background: linear-gradient(135deg, rgba(245,158,11,1), rgba(250,204,21,1));
+clip-path: polygon(50% 0%, 63% 32%, 98% 38%, 72% 60%, 79% 92%, 50% 74%, 21% 92%, 28% 60%, 2% 38%, 37% 32%);
+opacity: .95;
+filter: drop-shadow(0 6px 14px rgba(245,158,11,.18));
+}
+.actions{ display:flex; gap: 8px; margin-top:auto; }
+.actions .btn{ flex:1; padding: 11px 12px; border-radius: 14px; box-shadow:none; }
+
+.sidePanel{
+padding: 16px;
+position: sticky;
+top: 78px;
+}
+.sidePanel h3{ margin:0 0 6px; font-size: 15px; }
+.check{
+display:flex; gap: 10px; align-items:flex-start;
+padding: 10px 0;
+border-top: 1px dashed rgba(255,255,255,.12);
+}
+.check:first-of-type{ border-top: 0; }
+.check b{ font-size: 13.5px; }
+.check p{ margin: 2px 0 0; color: var(--muted2); font-size: 12.5px; line-height: 1.6; }
+.tick{
+width: 22px; height: 22px; border-radius: 8px;
+background: rgba(34,197,94,.14);
+border: 1px solid rgba(34,197,94,.28);
+display:flex; align-items:center; justify-content:center;
+box-shadow: 0 10px 24px rgba(34,197,94,.10);
+flex: 0 0 auto;
+margin-top: 2px;
+}
+.tick svg{ width: 14px; height: 14px; }
+
+.pricing{
+display:grid;
+gap: 12px;
+grid-template-columns: repeat(3, 1fr);
+}
+.plan{
+padding: 16px;
+border-radius: var(--r);
+border: 1px solid rgba(255,255,255,.11);
+background: rgba(255,255,255,.04);
+box-shadow: 0 18px 46px rgba(0,0,0,.25);
+position: relative;
+overflow:hidden;
+display:flex;
+flex-direction:column;
+gap: 10px;
+min-height: 245px;
+}
+.plan.featured{
+border: 1px solid rgba(124,58,237,.45);
+background: linear-gradient(180deg, rgba(124,58,237,.15), rgba(255,255,255,.04));
+box-shadow: 0 22px 70px rgba(124,58,237,.14);
+transform: translateY(-2px);
+}
+.plan .tag{
+position:absolute; top: 14px; inset-inline-end: 14px;
+padding: 8px 10px;
+border-radius: 999px;
+background: linear-gradient(135deg, rgba(124,58,237,.95), rgba(6,182,212,.8));
+font-size: 12px;
+border: 0;
+box-shadow: 0 16px 50px rgba(124,58,237,.20);
+}
+.plan h3{ margin:0; font-size: 15.5px; }
+.plan p{ margin:0; color: var(--muted); font-size: 13px; line-height: 1.7; }
+.money{
+display:flex; align-items:baseline; gap: 8px;
+margin-top: 4px;
+}
+.money b{ font-size: 28px; letter-spacing: -.6px; }
+.money span{ color: var(--muted2); font-size: 12.5px; }
+.ul{ margin: 6px 0 0; padding: 0; list-style:none; display:grid; gap: 8px; }
+.ul li{ display:flex; gap: 10px; color: var(--muted); font-size: 13px; line-height: 1.6; }
+.ul li .miniTick{
+width: 18px; height: 18px; border-radius: 7px;
+background: rgba(6,182,212,.12);
+border: 1px solid rgba(6,182,212,.25);
+flex: 0 0 auto;
+margin-top: 1px;
+display:flex; align-items:center; justify-content:center;
+}
+.ul svg{ width: 12px; height: 12px; }
+
+.dash{
+display:grid;
+gap: 12px;
+grid-template-columns: 1fr 1fr 1fr;
+}
+
+.cta{
+padding: 18px;
+display:grid;
+gap: 14px;
+grid-template-columns: 1.35fr .65fr;
+align-items:center;
+position: relative;
+overflow:hidden;
+}
+.cta:before{
+content:"";
+position:absolute; inset:-40%;
+background:
+radial-gradient(closest-side, rgba(34,197,94,.20), transparent 65%),
+radial-gradient(closest-side, rgba(124,58,237,.22), transparent 60%),
+radial-gradient(closest-side, rgba(6,182,212,.18), transparent 55%);
+filter: blur(10px);
+opacity:.9;
+transform: rotate(-12deg);
+pointer-events:none;
+}
+.cta > *{ position: relative; }
+.cta h2{ margin:0; font-size: 18px; }
+.cta p{ margin: 6px 0 0; color: var(--muted); line-height: 1.8; font-size: 13.5px; }
+.newsletter{
+display:flex; gap: 10px; flex-wrap:wrap; justify-content:flex-end;
+}
+.newsletter input{
+flex: 1 1 180px;
+min-width: 180px;
+padding: 12px 12px;
+border-radius: 14px;
+border: 1px solid rgba(255,255,255,.12);
+background: rgba(255,255,255,.04);
+outline:none;
+}
+.newsletter input:focus-visible{ box-shadow: var(--focus); }
+
+.faq{
+display:grid; gap: 10px;
+grid-template-columns: 1fr 1fr;
+}
+details{
+border: 1px solid rgba(255,255,255,.10);
+border-radius: var(--r);
+background: rgba(255,255,255,.04);
+box-shadow: 0 18px 46px rgba(0,0,0,.18);
+overflow:hidden;
+}
+summary{
+padding: 14px 14px;
+cursor:pointer;
+list-style:none;
+display:flex; align-items:center; justify-content:space-between; gap: 12px;
+color: var(--text);
+user-select:none;
+}
+summary::-webkit-details-marker{ display:none; }
+.caret{
+width: 28px; height: 28px;
+border-radius: 12px;
+border: 1px solid rgba(255,255,255,.12);
+background: rgba(255,255,255,.04);
+display:flex; align-items:center; justify-content:center;
+transition: transform .2s ease;
+flex: 0 0 auto;
+}
+details[open] .caret{ transform: rotate(180deg); }
+.faqBody{
+padding: 0 14px 14px;
+color: var(--muted);
+line-height: 1.85;
+font-size: 13.5px;
+}
+
+footer{
+padding: 22px 0 36px;
+border-top: 1px solid rgba(255,255,255,.08);
+background: rgba(0,0,0,.10);
+margin-top: 12px;
+}
+.footGrid{
+display:grid;
+gap: 16px;
+grid-template-columns: 1.2fr .8fr .8fr;
+align-items:start;
+}
+.footGrid h4{ margin:0 0 8px; font-size: 14px; }
+.footGrid a{ display:block; padding: 6px 0; color: var(--muted); }
+.footGrid a:hover{ color: var(--text); }
+.copy{
+margin-top: 14px;
+display:flex; justify-content:space-between; align-items:center; gap: 10px;
+color: var(--muted2);
+font-size: 12.5px;
+flex-wrap: wrap;
+}
+
+/* Modals */
+.overlay{
+position: fixed;
+inset: 0;
+background: rgba(0,0,0,.55);
+backdrop-filter: blur(10px);
+-webkit-backdrop-filter: blur(10px);
+display:none;
+align-items:center;
+justify-content:center;
+padding: 18px;
+z-index: 80;
+}
+.overlay.open{ display:flex; }
+.modal{
+width: min(720px, 100%);
+border-radius: 18px;
+border: 1px solid rgba(255,255,255,.12);
+background: rgba(10,14,26,.72);
+box-shadow: var(--shadow);
+overflow:hidden;
+}
+.modalHead{
+padding: 14px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap: 10px;
+border-bottom: 1px solid rgba(255,255,255,.10);
+}
+.modalHead h3{ margin:0; font-size: 15px; }
+.modalBody{ padding: 14px; }
+.modalGrid{
+display:grid;
+gap: 12px;
+grid-template-columns: 1.1fr .9fr;
+align-items:start;
+}
+.field{
+display:grid; gap: 8px;
+}
+.field label{ font-size: 12.5px; color: var(--muted2); }
+.field input, .field select, .field textarea{
+padding: 12px 12px;
+border-radius: 14px;
+border: 1px solid rgba(255,255,255,.12);
+background: rgba(255,255,255,.04);
+outline:none;
+}
+.field textarea{ min-height: 108px; resize: vertical; }
+.field input:focus-visible, .field select:focus-visible, .field textarea:focus-visible{ box-shadow: var(--focus); }
+.modalFoot{
+padding: 14px;
+border-top: 1px solid rgba(255,255,255,.10);
+display:flex;
+gap: 10px;
+justify-content:flex-end;
+flex-wrap: wrap;
+}
+.toast{
+position: fixed;
+bottom: 18px;
+inset-inline-start: 18px;
+z-index: 90;
+display:none;
+max-width: min(520px, calc(100vw - 36px));
+}
+.toast.show{ display:block; }
+.toast .card{ padding: 12px 12px; }
+.toast .row{ justify-content:space-between; }
+.toast b{ font-size: 13px; }
+.toast p{ margin: 4px 0 0; color: var(--muted); font-size: 12.5px; line-height: 1.6; }
+
+/* WhatsApp */
+.wa{
+position: fixed;
+bottom: 18px;
+inset-inline-end: 18px;
+z-index: 95;
+display:flex;
+flex-direction:column;
+gap: 10px;
+align-items:flex-end;
+}
+.wa .fab{
+display:flex;
+align-items:center;
+gap: 10px;
+padding: 12px 14px;
+border-radius: 999px;
+border: 1px solid rgba(34,197,94,.35);
+background: linear-gradient(135deg, rgba(34,197,94,.92), rgba(6,182,212,.60));
+box-shadow: 0 20px 60px rgba(34,197,94,.18);
+cursor:pointer;
+transition: transform .12s ease, filter .2s ease;
+user-select:none;
+}
+.wa .fab:hover{ transform: translateY(-1px); filter: brightness(1.03); }
+.wa .fab:active{ transform: translateY(0px); }
+.wa .hint{
+padding: 10px 12px;
+border-radius: 14px;
+background: rgba(0,0,0,.25);
+border: 1px solid rgba(255,255,255,.10);
+color: var(--muted);
+font-size: 12.5px;
+max-width: 260px;
+display:none;
+}
+.wa .hint.show{ display:block; }
+.wa svg{ width: 18px; height: 18px; }
+
+/* Mobile */
+.hamb{ display:none; }
+.drawer{
+position: fixed;
+top: 0;
+inset-inline-start: 0;
+height: 100%;
+width: min(360px, 92vw);
+background: rgba(10,14,26,.92);
+border-inline-end: 1px solid rgba(255,255,255,.10);
+box-shadow: 0 22px 60px rgba(0,0,0,.55);
+backdrop-filter: blur(18px);
+-webkit-backdrop-filter: blur(18px);
+transform: translateX(110%);
+transition: transform .22s ease;
+z-index: 85;
+padding: 14px;
+display:flex;
+flex-direction:column;
+gap: 10px;
+}
+[dir="rtl"] .drawer{ transform: translateX(-110%); }
+.drawer.open{ transform: translateX(0); }
+.drawer .navlinks{ flex-direction:column; align-items:stretch; justify-content:flex-start; }
+.drawer .navlinks a{ background: rgba(255,255,255,.03); border-color: rgba(255,255,255,.08); }
+.drawer .pill input{ width: 100%; }
+
+.backdrop{
+position: fixed; inset:0;
+background: rgba(0,0,0,.5);
+z-index: 84;
+display:none;
+}
+.backdrop.show{ display:block; }
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce){
+*{ animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+
+@media (max-width: 980px){
+.navlinks{ display:none; }
+.hamb{ display:inline-flex; }
+.pill input{ width: 180px; }
+.heroGrid{ grid-template-columns: 1fr; }
+.market{ grid-template-columns: 1fr; }
+.sidePanel{ position: relative; top:0; }
+.features{ grid-template-columns: 1fr; }
+.products{ grid-template-columns: 1fr; }
+.pricing{ grid-template-columns: 1fr; }
+.dash{ grid-template-columns: 1fr; }
+.cta{ grid-template-columns: 1fr; }
+.faq{ grid-template-columns: 1fr; }
+.footGrid{ grid-template-columns: 1fr; }
+.navtools{ min-width: auto; }
+.brand{ min-width: auto; }
+}
+
+/* Light mode tweaks */
+body.light{
+--bg0:#F7F8FC;
+--bg1:#EEF2FF;
+--card: rgba(10,14,26,.06);
+--card2: rgba(10,14,26,.08);
+--stroke: rgba(10,14,26,.12);
+--text:#0B1020;
+--muted: rgba(11,16,32,.75);
+--muted2: rgba(11,16,32,.60);
+background: radial-gradient(1200px 700px at 90% 0%, rgba(124,58,237,.20), transparent 60%),
+radial-gradient(900px 700px at 10% 15%, rgba(6,182,212,.16), transparent 60%),
+radial-gradient(900px 700px at 70% 100%, rgba(34,197,94,.12), transparent 60%),
+linear-gradient(180deg, var(--bg0), var(--bg1));
+}
+body.light .topbar{ background: rgba(247,248,252,.65); }
+body.light .modal{ background: rgba(255,255,255,.78); }
+body.light .wa .hint{ background: rgba(255,255,255,.72); }
+</style>
+</head>
+
+<body>
+<div class="topbar">
+<div class="wrap">
+<div class="nav">
+<div class="brand" role="banner" aria-label="TrendMarketdz">
+<div class="logo" aria-hidden="true"></div>
+<div>
+<h1>TrendMarketdz</h1>
+<p data-i18n="brandTag">سوق رقمي عالمي للمنتجات الرقمية</p>
+</div>
+</div>
+
+<nav class="navlinks" aria-label="Primary">
+<a href="#features" data-i18n="navFeatures">المميزات</a>
+<a href="#market" data-i18n="navMarket">السوق</a>
+<a href="#pricing" data-i18n="navPricing">الباقات</a>
+<a href="#dashboard" data-i18n="navDashboard">لوحة التحكم</a>
+<a href="#faq" data-i18n="navFaq">الأسئلة</a>
+</nav>
+
+<div class="navtools">
+<button class="btn icon ghost hamb" id="openDrawer" aria-label="Open menu">
+<span class="shine"></span>
+<svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+<path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+</svg>
+</button>
+
+<div class="pill" aria-label="Search products">
+<svg viewBox="0 0 24 24" fill="none" aria-hidden="true" style="width:18px;height:18px;opacity:.9">
+<path d="M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15Z" stroke="currentColor" stroke-width="2"/>
+<path d="M16.5 16.5 21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+</svg>
+<input id="search" type="search" placeholder="ابحث عن: كورسات، قوالب..." data-i18n-ph="searchPh" />
+<span class="kbd" title="Shortcut">Ctrl K</span>
+</div>
+
+<select class="select" id="lang" aria-label="Language">
+<option value="ar">AR</option>
+<option value="en">EN</option>
+<option value="fr">FR</option>
+</select>
+
+<button class="btn icon ghost" id="toggleTheme" aria-label="Toggle theme" title="Theme">
+<span class="shine"></span>
+<svg id="themeIcon" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="width:18px;height:18px">
+<path d="M21 14.5A8.5 8.5 0 0 1 9.5 3a6.5 6.5 0 1 0 11.5 11.5Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+</svg>
+</button>
+
+<button class="btn primary" id="openSell">
+<span class="shine"></span>
+<svg viewBox="0 0 24 24" fill="none" aria-hidden="true" style="width:18px;height:18px">
+<path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+</svg>
+<span data-i18n="sellBtn">ابدأ البيع</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+
+<div class="backdrop" id="backdrop" aria-hidden="true"></div>
+<aside class="drawer" id="drawer" aria-label="Mobile menu">
+<div class="row" style="justify-content:space-between">
+<div class="row">
+<div class="logo" aria-hidden="true" style="width:34px;height:34px;border-radius:12px"></div>
+<div>
+<div style="font-weight:800; letter-spacing:.2px">TrendMarketdz</div>
+<div class="small muted2" data-i18n="brandTag">سوق رقمي عالمي للمنتجات الرقمية</div>
+</div>
+</div>
+<button class="btn icon ghost" id="closeDrawer" aria-label="Close menu">
+<span class="shine"></span>
+<svg viewBox="0 0 24 24" fill="none" aria-hidden="true" style="width:18px;height:18px">
+<path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+</svg>
+</button>
+</div>
+
+<div class="pill" aria-label="Search products (mobile)">
+<svg viewBox="0 0 24 24" fill="none" aria-hidden="true" style="width:18px;height:18px;opacity:.9">
+<path d="M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15Z" stroke="currentColor" stroke-width="2"/>
+<path d="M16.5 16.5 21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+</svg>
+<input id="searchMobile" type="search" placeholder="ابحث..." data-i18n-ph="searchPhShort" />
+</div>
+
+<nav class="navlinks" aria-label="Mobile primary">
+<a href="#features" data-i18n="navFeatures">المميزات</a>
+<a href="#market" data-i18n="navMarket">السوق</a>
+<a href="#pricing" data-i18n="navPricing">الباقات</a>
+<a href="#dashboard" data-i18n="navDashboard">لوحة التحكم</a>
+<a href="#faq" data-i18n="navFaq">الأسئلة</a>
+</nav>
+
+<div class="row" style="justify-content:space-between; gap:10px; flex-wrap:wrap; margin-top:auto">
+<select class="select" id="langMobile" aria-label="Language (mobile)" style="flex:1">
+<option value="ar">العربية</option>
+<option value="en">English</option>
+<option value="fr">Français</option>
+</select>
+<button class="btn icon ghost" id="toggleThemeMobile" aria-label="Toggle theme (mobile)">
+<span class="shine"></span>
+<svg viewBox="0 0 24 24" fill="none" aria-hidden="true" style="width:18px;height:18px">
+<path d="M21 14.5A8.5 8.5 0 0 1 9.5 3a6.5 6.5 0 1 0 11.5 11.5Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+</svg>
+</button>
+<button class="btn primary" id="openSellMobile" style="flex:1">
+<span class="shine"></span>
+<span data-i18n="sellBtn">ابدأ البيع</span>
+</button>
+</div>
+</aside>
+
+<header class="hero">
+<div class="wrap">
+<div class="heroGrid">
+<div>
+<div class="badge" style="margin-bottom: 12px">
+<span class="dot" aria-hidden="true"></span>
+<span class="small" data-i18n="badgeLive">منصة جاهزة للإطلاق — تجربة عرض احترافية</span>
+<span class="kbd" aria-hidden="true">v1</span>
+</div>
+
+<h2 class="heroTitle">
+<span data-i18n="heroA">أكبر سوق احترافي للمنتجات الرقمية:</span>
+<span class="gradText">TrendMarketdz</span>
+</h2>
+
+<p class="heroLead" data-i18n="heroLead">
+اشترِ وبِع كورسات، قوالب، تطبيقات، كتب إلكترونية، تصاميم وخدمات رقمية في منصة واحدة. نظام دفع متعدد العملات، ملفات آمنة، ولوحة تحكم ذكية للبائعين والمشترين — مع دعم واتساب احترافي.
+</p>
+
+<div class="heroCtas">
+<button class="btn primary" id="openBuy">
+<span class="shine"></span>
+<svg viewBox="0 0 24 24" fill="none" aria-hidden="true" style="width:18px;height:18px">
+<path d="M6 7h15l-1.5 9h-12L6 7Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+<path d="M6 7 5 4H2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+<path d="M9 20a1 1 0 1 0 0-2 1 1 0 0 0 0 2ZM18 20a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z" stroke="currentColor" stroke-width="2"/>
+</svg>
+<span data-i18n="ctaBrowse">تصفح أفضل المنتجات</span>
+</button>
+
+<a class="btn green" href="https://wa.me/213699861542?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%20TrendMarketdz%20%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D9%85%D8%B3%D8%A7%D8%B9%D8%AF%D8%A9%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%A8%D8%AF%D8%A1" target="_blank" rel="noopener">
+<span class="shine"></span>
+<svg viewBox="0 0 24 24" fill="none" aria-hidden="true" style="width:18px;height:18px">
+<path d="M20 11.5a7.5 7.5 0 0 1-11.6 6.3L4 19l1.3-4.4A7.5 7.5 0 1 1 20 11.5Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+<path d="M9.2 9.1c.3-.6.6-.6.9-.5l.7.2c.2.1.3.2.3.4 0 .2 0 .4-.1.6-.1.3-.1.6.1.9.3.5.8 1.1 1.4 1.6.5.4 1.1.8 1.6 1 .3.1.6.1.9 0 .2-.1.4-.1.6 0 .2.1.3.2.4.4l.2.8c.1.3 0 .6-.4.8-.7.3-1.7.5-3.7-.5-2.4-1.2-4-3.9-4.2-4.3-.2-.4-.7-1.6-.1-2.6Z" fill="currentColor" opacity=".85"/>
+</svg>
+<span data-i18n="ctaWhatsApp">تواصل عبر واتساب</span>
+</a>
+
+<button class="btn" id="openDemo">
+<span class="shine"></span>
+<svg viewBox="0 0 24 24" fill="none" aria-hidden="true" style="width:18px;height:18px">
+<path d="M10 8 16 12 10 16V8Z" fill="currentColor" opacity=".9"/>
+<path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v11A2.5 2.5 0 0 1 17.5 20h-11A2.5 2.5 0 0 1 4 17.5v-11Z" stroke="currentColor" stroke-width="2"/>
+</svg>
+<span data-i18n="ctaDemo">عرض سريع للمنصة</span>
+</button>
+</div>
+
+<div class="heroMeta">
+<div class="stat">
+<b id="stat1">+0</b>
+<span data-i18n="stat1">منتج رقمي قابل للبيع</span>
+</div>
+<div class="stat">
+<b id="stat2">0ms</b>
+<span data-i18n="stat2">تجربة تصفح سريعة</span>
+</div>
+<div class="stat">
+<b id="stat3">24/7</b>
+<span data-i18n="stat3">دعم واتساب</span>
+</div>
+</div>
+</div>
+
+<div class="card heroAside">
+<div class="mock">
+<div class="mockHeader">
+<div class="chip"><strong data-i18n="mockTitle">لوحة مؤشرات</strong><span class="muted2" data-i18n="mockSub">البائع</span></div>
+<div class="chip"><span class="muted2" data-i18n="mockSecure">مدفوعات آمنة</span></div>
+</div>
+
+<div class="bar" aria-label="Sales progress"><i style="--w:72%"></i></div>
+
+<div class="mockGrid">
+<div class="miniCard">
+<div class="t">
+<h4 data-i18n="kpi1">المبيعات (هذا الأسبوع)</h4>
+<div class="spark" aria-hidden="true"></div>
+</div>
+<div class="muted2 small" data-i18n="kpi1b">مقارنة بالأسبوع الماضي</div>
+<b><span id="kpiSales">$0</span> <span class="small muted2">+18%</span></b>
+</div>
+
+<div class="miniCard">
+<div class="t">
+<h4 data-i18n="kpi2">تحميلات آمنة</h4>
+<div class="spark" aria-hidden="true" style="background: radial-gradient(14px 14px at 35% 35%, rgba(255,255,255,.7), rgba(255,255,255,0) 65%), linear-gradient(135deg, rgba(34,197,94,1), rgba(6,182,212,1)); box-shadow: 0 14px 30px rgba(34,197,94,.14)"></div>
+</div>
+<div class="muted2 small" data-i18n="kpi2b">روابط محمية + حد تنزيل</div>
+<b><span id="kpiDownloads">0</span> <span class="small muted2" data-i18n="kpi2c">تحميل</span></b>
+</div>
+
+<div class="miniCard">
+<div class="t">
+<h4 data-i18n="kpi3">التحويل</h4>
+<div class="spark" aria-hidden="true" style="background: radial-gradient(14px 14px at 35% 35%, rgba(255,255,255,.7), rgba(255,255,255,0) 65%), linear-gradient(135deg, rgba(245,158,11,1), rgba(124,58,237,1)); box-shadow: 0 14px 30px rgba(245,158,11,.14)"></div>
+</div>
+<div class="muted2 small" data-i18n="kpi3b">صفحات منتجات محسّنة</div>
+<b><span id="kpiConv">0.0%</span></b>
+</div>
+
+<div class="miniCard">
+<div class="t">
+<h4 data-i18n="kpi4">الدعم</h4>
+<div class="spark" aria-hidden="true" style="background: radial-gradient(14px 14px at 35% 35%, rgba(255,255,255,.7), rgba(255,255,255,0) 65%), linear-gradient(135deg, rgba(6,182,212,1), rgba(59,130,246,1)); box-shadow: 0 14px 30px rgba(6,182,212,.14)"></div>
+</div>
+<div class="muted2 small" data-i18n="kpi4b">واتساب + تذاكر</div>
+<b><span data-i18n="kpi4c">أقل من</span> <span id="kpiSupport">5</span> <span data-i18n="kpi4d" class="small muted2">دقائق</span></b>
+</div>
+</div>
+
+<div class="row" style="justify-content:space-between; flex-wrap:wrap; gap:10px">
+<div class="chip">
+<span class="muted2" data-i18n="mockMulti">عملات متعددة</span>
+<span class="kbd">DZD • EUR • USD</span>
+</div>
+<button class="btn ghost" id="openCheckout" style="padding:10px 12px; border-radius: 14px">
+<span class="shine"></span>
+<span data-i18n="mockPay">جرّب الدفع (تجريبي)</span>
+</button>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</header>
+
+<main>
+<section id="features">
+<div class="wrap">
+<div class="sectionHead">
+<div>
+<h2 data-i18n="featuresTitle">لماذا TrendMarketdz؟</h2>
+<p data-i18n="featuresSub">تصميم حديث + بنية احترافية لنمو عالمي سريع.</p>
+</div>
+<div class="badge">
+<span class="dot" aria-hidden="true"></span>
+<span class="small" data-i18n="featuresNote">جاهز للتوسع (API + تطبيقات مستقبلية)</span>
+</div>
+</div>
+
+<div class="features">
+<div class="feature">
+<div class="ico" aria-hidden="true">
+<svg viewBox="0 0 24 24" fill="none" style="width:20px;height:20px">
+<path d="M12 2 20 6v6c0 5-3.5 9.3-8 10-4.5-.7-8-5-8-10V6l8-4Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+<path d="M9 12l2 2 4-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+</div>
+<h3 data-i18n="f1t">حماية الملفات + تراخيص</h3>
+<p data-i18n="f1d">روابط تحميل مؤقتة، حدود تنزيل، ومفاتيح ترخيص للتطبيقات والقوالب.</p>
+</div>
+
+<div class="feature">
+<div class="ico" aria-hidden="true">
+<svg viewBox="0 0 24 24" fill="none" style="width:20px;height:20px">
+<path d="M4 7h16v10H4V7Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+<path d="M7 10h6M7 14h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+</svg>
+</div>
+<h3 data-i18n="f2t">دفع متعدد العملات</h3>
+<p data-i18n="f2d">تجربة دفع سلسة بعملات مختلفة، فواتير إلكترونية، وإشعارات فورية.</p>
+</div>
+
+<div class="feature">
+<div class="ico" aria-hidden="true">
+<svg viewBox="0 0 24 24" fill="none" style="width:20px;height:20px">
+<path d="M4 19V5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v14" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+<path d="M8 7h8M8 11h8M8 15h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+</svg>
+</div>
+<h3 data-i18n="f3t">لوحة تحكم ذكية</h3>
+<p data-i18n="f3d">إحصاءات مبيعات، تتبع التحويل، إدارة منتجات، وقسائم خصم.</p>
+</div>
+
+<div class="feature">
+<div class="ico" aria-hidden="true">
+<svg viewBox="0 0 24 24" fill="none" style="width:20px;height:20px">
+<path d="M9 18h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+<path d="M10 22h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+<path d="M12 2a8 8 0 0 0-4.5 14.6c.6.4 1 1.1 1.1 1.9h6.8c.1-.8.5-1.5 1.1-1.9A8 8 0 0 0 12 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+</svg>
+</div>
+<h3 data-i18n="f4t">تسويق رقمي مدمج</h3>
+<p data-i18n="f4d">SEO، صفحات هبوط، تتبع UTM، وإعدادات حملات سهلة للبائعين.</p>
+</div>
+
+<div class="feature">
+<div class="ico" aria-hidden="true">
+<svg viewBox="0 0 24 24" fill="none" style="width:20px;height:20px">
+<path d="M7 12h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+<path d="M12 7v10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+<path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" stroke="currentColor" stroke-width="2"/>
+</svg>
+</div>
+<h3 data-i18n="f5t">متجر عالمي متعدد اللغات</h3>
+<p data-i18n="f5d">العربية/الإنجليزية/الفرنسية — تجربة ممتازة على الهاتف والكمبيوتر.</p>
+</div>
+
+<div class="feature">
+<div class="ico" aria-hidden="true">
+<svg viewBox="0 0 24 24" fill="none" style="width:20px;height:20px">
+<path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v8Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+<path d="M7 9h8M7 13h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+</svg>
+</div>
+<h3 data-i18n="f6t">دعم واتساب احترافي</h3>
+<p data-i18n="f6d">زر عائم، رسائل جاهزة، وربط الطلبات بالدعم لتجربة أسرع.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="market">
+<div class="wrap">
+<div class="sectionHead">
+<div>
+<h2 data-i18n="marketTitle">السوق — منتجات مختارة</h2>
+<p data-i18n="marketSub">فلترة ذكية + بحث فوري. أضف للسلة وجرب “الشراء” التجريبي.</p>
+</div>
+<div class="badge">
+<span class="small" data-i18n="marketHint">نصيحة: اكتب في البحث أو اختر تصنيف</span>
+</div>
+</div>
+
+<div class="market">
+<div>
+<div class="filters">
+<div class="tabs" role="tablist" aria-label="Categories">
+<button class="tab active" data-cat="all" role="tab" aria-selected="true" data-i18n="catAll">الكل</button>
+<button class="tab" data-cat="courses" role="tab" aria-selected="false" data-i18n="catCourses">كورسات</button>
+<button class="tab" data-cat="templates" role="tab" aria-selected="false" data-i18n="catTemplates">قوالب</button>
+<button class="tab" data-cat="apps" role="tab" aria-selected="false" data-i18n="catApps">تطبيقات</button>
+<button class="tab" data-cat="ebooks" role="tab" aria-selected="false" data-i18n="catEbooks">كتب</button>
+<button class="tab" data-cat="design" role="tab" aria-selected="false" data-i18n="catDesign">تصاميم</button>
+<button class="tab" data-cat="services" role="tab" aria-selected="false" data-i18n="catServices">خدمات</button>
+</div>
+
+<div class="row" style="gap:10px; flex-wrap:wrap; justify-content:flex-end">
+<select class="select" id="currency" aria-label="Currency">
+<option value="DZD">DZD</option>
+<option value="USD">USD</option>
+<option value="EUR">EUR</option>
+</select>
+<button class="btn" id="openCart">
+<span class="shine"></span>
+<svg viewBox="0 0 24 24" fill="none" aria-hidden="true" style="width:18px;height:18px">
+<path d="M6 7h15l-1.5 9h-12L6 7Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+<path d="M6 7 5 4H2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+<path d="M9 20a1 1 0 1 0 0-2 1 1 0 0 0 0 2ZM18 20a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z" stroke="currentColor" stroke-width="2"/>
+</svg>
+<span data-i18n="cartBtn">السلة</span>
+<span class="kbd" id="cartCount">0</span>
+</button>
+</div>
+</div>
+
+<div class="products" id="products" aria-live="polite"></div>
+</div>
+
+<aside class="card sidePanel">
+<h3 data-i18n="trustTitle">ثقة + جودة</h3>
+
+<div class="check">
+<div class="tick" aria-hidden="true">
+<svg viewBox="0 0 24 24" fill="none">
+<path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+</div>
+<div>
+<b data-i18n="t1t">مراجعة منتجات</b>
+<p data-i18n="t1d">سياسة جودة للملفات والوصف والصور لمنع المحتوى غير المناسب.</p>
+</div>
+</div>
+
+<div class="check">
+<div class="tick" aria-hidden="true">
+<svg viewBox="0 0 24 24" fill="none">
+<path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+</div>
+<div>
+<b data-i18n="t2t">حماية ضد الاحتيال</b>
+<p data-i18n="t2d">بصمات تنزيل، تتبع طلبات، وإشعارات نشاط مشبوه.</p>
+</div>
+</div>
+
+<div class="check">
+<div class="tick" aria-hidden="true">
+<svg viewBox="0 0 24 24" fill="none">
+<path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+</div>
+<div>
+<b data-i18n="t3t">دعم سريع عبر واتساب</b>
+<p data-i18n="t3d">رقم الدعم: <span class="kbd">+213699861542</span></p>
+</div>
+</div>
+
+<button class="btn green" style="width:100%; margin-top: 8px" id="openSupport">
+<span class="shine"></span>
+<svg viewBox="0 0 24 24" fill="none" aria-hidden="true" style="width:18px;height:18px">
+<path d="M20 11.5a7.5 7.5 0 0 1-11.6 6.3L4 19l1.3-4.4A7.5 7.5 0 1 1 20 11.5Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+</svg>
+<span data-i18n="supportBtn">فتح محادثة الدعم</span>
+</button>
+
+<div class="small muted2" style="margin-top: 10px" data-i18n="supportNote">
+يتم فتح واتساب في نافذة جديدة مع رسالة جاهزة.
+</div>
+</aside>
+</div>
+</div>
+</section>
+
+<section id="pricing">
+<div class="wrap">
+<div class="sectionHead">
+<div>
+<h2 data-i18n="pricingTitle">باقات تناسب البائعين والشركات</h2>
+<p data-i18n="pricingSub">اختر باقة، أو اطلب تخصيصًا (API + تطبيقات + تكاملات دفع).</p>
+</div>
+<div class="row" style="gap:10px; flex-wrap:wrap; justify-content:flex-end">
+<button class="btn ghost" id="openEnterprise">
+<span class="shine"></span>
+<span data-i18n="pricingCustom">اطلب عرضًا مخصصًا</span>
+</button>
+</div>
+</div>
+
+<div class="pricing">
+<div class="plan">
+<h3 data-i18n="p1t">Starter</h3>
+<p data-i18n="p1d">للبائعين الجدد — ارفع منتجاتك وابدأ البيع بسرعة.</p>
+<div class="money"><b data-plan-price="0">0</b><span data-i18n="perMonth">/ شهر</span></div>
+<ul class="ul">
+<li><span class="miniTick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="p1f1">حتى 10 منتجات</span></li>
+<li><span class="miniTick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="p1f2">إحصاءات أساسية</span></li>
+<li><span class="miniTick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="p1f3">دعم عبر واتساب</span></li>
+</ul>
+<div style="margin-top:auto"></div>
+<button class="btn" data-action="choosePlan" data-plan="Starter"><span class="shine"></span><span data-i18n="choosePlan">اختيار الباقة</span></button>
+</div>
+
+<div class="plan featured">
+<div class="tag" data-i18n="popular">الأكثر شيوعًا</div>
+<h3 data-i18n="p2t">Pro Seller</h3>
+<p data-i18n="p2d">للبيع بشكل احترافي — قسائم، تتبع، وحماية إضافية.</p>
+<div class="money"><b data-plan-price="19">19</b><span data-i18n="perMonth">/ شهر</span></div>
+<ul class="ul">
+<li><span class="miniTick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="p2f1">حتى 200 منتج</span></li>
+<li><span class="miniTick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="p2f2">قسائم خصم + UTM</span></li>
+<li><span class="miniTick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="p2f3">روابط تنزيل مؤقتة</span></li>
+<li><span class="miniTick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="p2f4">تذاكر دعم + واتساب</span></li>
+</ul>
+<div style="margin-top:auto"></div>
+<button class="btn primary" data-action="choosePlan" data-plan="Pro Seller"><span class="shine"></span><span data-i18n="startNow">ابدأ الآن</span></button>
+</div>
+
+<div class="plan">
+<h3 data-i18n="p3t">Enterprise</h3>
+<p data-i18n="p3d">للشركات — API، تكاملات دفع، وصلاحيات متقدمة.</p>
+<div class="money"><b data-plan-price="79">79</b><span data-i18n="perMonth">/ شهر</span></div>
+<ul class="ul">
+<li><span class="miniTick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="p3f1">عدد غير محدود من المنتجات</span></li>
+<li><span class="miniTick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="p3f2">API + Webhooks</span></li>
+<li><span class="miniTick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="p3f3">SSO + صلاحيات فريق</span></li>
+<li><span class="miniTick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="p3f4">SLA دعم أولوية</span></li>
+</ul>
+<div style="margin-top:auto"></div>
+<button class="btn" data-action="choosePlan" data-plan="Enterprise"><span class="shine"></span><span data-i18n="talkToUs">تواصل معنا</span></button>
+</div>
+</div>
+</div>
+</section>
+
+<section id="dashboard">
+<div class="wrap">
+<div class="sectionHead">
+<div>
+<h2 data-i18n="dashTitle">لوحة التحكم (نموذج تفاعلي)</h2>
+<p data-i18n="dashSub">حركات بسيطة + بيانات تجريبية توضح تجربة “Production-ready”.</p>
+</div>
+<div class="row" style="gap:10px; flex-wrap:wrap; justify-content:flex-end">
+<button class="btn ghost" id="refreshMetrics"><span class="shine"></span><span data-i18n="refresh">تحديث</span></button>
+<button class="btn" id="downloadReport"><span class="shine"></span><span data-i18n="download">تحميل تقرير</span></button>
+</div>
+</div>
+
+<div class="dash">
+<div class="card pad soft">
+<div class="row" style="justify-content:space-between">
+<div>
+<div class="muted2 small" data-i18n="d1">صافي الإيرادات</div>
+<div style="font-size: 26px; font-weight: 850; letter-spacing:-.6px" id="netRevenue">$0</div>
+<div class="small muted" id="netNote">—</div>
+</div>
+<div class="spark" aria-hidden="true"></div>
+</div>
+<div style="margin-top: 12px" class="bar" aria-label="Net revenue progress"><i id="netBar" style="--w:64%"></i></div>
+</div>
+
+<div class="card pad soft">
+<div class="row" style="justify-content:space-between">
+<div>
+<div class="muted2 small" data-i18n="d2">طلبات اليوم</div>
+<div style="font-size: 26px; font-weight: 850; letter-spacing:-.6px" id="todayOrders">0</div>
+<div class="small muted" id="orderNote">—</div>
+</div>
+<div class="spark" aria-hidden="true" style="background: radial-gradient(14px 14px at 35% 35%, rgba(255,255,255,.7), rgba(255,255,255,0) 65%), linear-gradient(135deg, rgba(245,158,11,1), rgba(124,58,237,1));"></div>
+</div>
+<div style="margin-top: 12px" class="bar" aria-label="Orders progress"><i id="orderBar" style="--w:52%"></i></div>
+</div>
+
+<div class="card pad soft">
+<div class="row" style="justify-content:space-between">
+<div>
+<div class="muted2 small" data-i18n="d3">معدل التحويل</div>
+<div style="font-size: 26px; font-weight: 850; letter-spacing:-.6px" id="conversion">0.0%</div>
+<div class="small muted" id="convNote">—</div>
+</div>
+<div class="spark" aria-hidden="true" style="background: radial-gradient(14px 14px at 35% 35%, rgba(255,255,255,.7), rgba(255,255,255,0) 65%), linear-gradient(135deg, rgba(6,182,212,1), rgba(59,130,246,1));"></div>
+</div>
+<div style="margin-top: 12px" class="bar" aria-label="Conversion progress"><i id="convBar" style="--w:46%"></i></div>
+</div>
+</div>
+
+<div class="card cta" style="margin-top: 12px">
+<div>
+<h2 data-i18n="ctaTitle">جاهز لبناء TrendMarketdz الحقيقي؟</h2>
+<p data-i18n="ctaText">
+هذه صفحة عرض فقط. يمكن تحويلها لمشروع كامل باستخدام Next.js + API + قاعدة بيانات + بوابات دفع حقيقية + نظام تراخيص + لوحة تحكم متقدمة.
+</p>
+<div class="heroCtas" style="margin-top: 12px">
+<button class="btn primary" id="openRoadmap"><span class="shine"></span><span data-i18n="roadmap">خطة التنفيذ</span></button>
+<a class="btn" href="https://wa.me/213699861542?text=%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%AE%D8%B7%D8%A9%20%D8%AA%D9%86%D9%81%D9%8A%D8%B0%20TrendMarketdz%20%D9%88%D8%AA%D9%82%D8%AF%D9%8A%D8%B1%20%D8%AA%D9%83%D9%84%D9%81%D8%A9" target="_blank" rel="noopener"><span class="shine"></span><span data-i18n="askCost">اطلب تقدير تكلفة</span></a>
+</div>
+</div>
+
+<div class="newsletter" aria-label="Newsletter">
+<input id="email" type="email" placeholder="بريدك الإلكتروني" data-i18n-ph="emailPh" autocomplete="email"/>
+<button class="btn green" id="subscribe"><span class="shine"></span><span data-i18n="subscribe">اشترك</span></button>
+<div class="small muted2" style="width:100%" data-i18n="privacy">
+بالاشتراك أنت توافق على إرسال تحديثات — بدون إزعاج.
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="faq">
+<div class="wrap">
+<div class="sectionHead">
+<div>
+<h2 data-i18n="faqTitle">الأسئلة الشائعة</h2>
+<p data-i18n="faqSub">إجابات سريعة عن الدفع، الملفات، والبائعين.</p>
+</div>
+<div class="badge">
+<span class="small" data-i18n="faqHint">لم تجد جوابًا؟ تواصل عبر واتساب</span>
+</div>
+</div>
+
+<div class="faq">
+<details>
+<summary>
+<span data-i18n="q1">كيف يتم تسليم المنتجات الرقمية بعد الدفع؟</span>
+<span class="caret" aria-hidden="true">
+<svg viewBox="0 0 24 24" fill="none" style="width:16px;height:16px">
+<path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+</span>
+</summary>
+<div class="faqBody" data-i18n="a1">
+يتم إنشاء رابط تنزيل آمن (مؤقت) داخل حساب المشتري، ويمكن أيضًا إرسال نسخة للملف/الترخيص عبر البريد حسب إعدادات المنتج.
+</div>
+</details>
+
+<details>
+<summary>
+<span data-i18n="q2">هل يوجد دعم واتساب فعلاً؟</span>
+<span class="caret" aria-hidden="true">
+<svg viewBox="0 0 24 24" fill="none" style="width:16px;height:16px">
+<path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+</span>
+</summary>
+<div class="faqBody" data-i18n="a2">
+نعم. الرقم: <span class="kbd">+213699861542</span>. يتم فتح محادثة برسالة جاهزة لتسريع الدعم.
+</div>
+</details>
+
+<details>
+<summary>
+<span data-i18n="q3">هل المنصة متعددة اللغات؟</span>
+<span class="caret" aria-hidden="true">
+<svg viewBox="0 0 24 24" fill="none" style="width:16px;height:16px">
+<path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+</span>
+</summary>
+<div class="faqBody" data-i18n="a3">
+نعم: العربية، الإنجليزية، الفرنسية. يمكنك التبديل من أعلى الصفحة، مع دعم اتجاه RTL للعربية.
+</div>
+</details>
+
+<details>
+<summary>
+<span data-i18n="q4">كيف يتم حماية حقوق البائعين؟</span>
+<span class="caret" aria-hidden="true">
+<svg viewBox="0 0 24 24" fill="none" style="width:16px;height:16px">
+<path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+</span>
+</summary>
+<div class="faqBody" data-i18n="a4">
+عبر روابط تنزيل مؤقتة، حدود تنزيل، بصمات تحميل، ومفاتيح ترخيص للمنتجات البرمجية — بالإضافة لإجراءات مكافحة الاحتيال.
+</div>
+</details>
+
+<details>
+<summary>
+<span data-i18n="q5">هل هذا الموقع هو النسخة النهائية؟</span>
+<span class="caret" aria-hidden="true">
+<svg viewBox="0 0 24 24" fill="none" style="width:16px;height:16px">
+<path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+</span>
+</summary>
+<div class="faqBody" data-i18n="a5">
+هذه صفحة عرض (Prototype) بتصميم احترافي وتفاعل كامل على الواجهة الأمامية. يمكن تطويرها إلى منصة حقيقية مع Backend وPayments وDB وAPI.
+</div>
+</details>
+
+<details>
+<summary>
+<span data-i18n="q6">هل يمكن إضافة بوابات دفع محلية/عالمية؟</span>
+<span class="caret" aria-hidden="true">
+<svg viewBox="0 0 24 24" fill="none" style="width:16px;height:16px">
+<path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+</span>
+</summary>
+<div class="faqBody" data-i18n="a6">
+نعم. يتم تصميم طبقة دفع قابلة للتبديل (Gateway Layer) لإضافة Stripe/PayPal أو حلول محلية حسب بلد الاستهداف.
+</div>
+</details>
+</div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="wrap">
+<div class="footGrid">
+<div>
+<div class="row" style="gap:10px">
+<div class="logo" aria-hidden="true" style="width:36px;height:36px"></div>
+<div>
+<div style="font-weight:900; letter-spacing:.2px">TrendMarketdz</div>
+<div class="small muted2" data-i18n="footTag">سوق عالمي للمنتجات الرقمية — سريع، آمن، وقابل للتوسع.</div>
+</div>
+</div>
+
+<div class="row" style="margin-top: 12px; flex-wrap:wrap">
+<span class="badge"><span class="dot"></span><span class="small" data-i18n="footStatus">الحالة: عرض تجريبي</span></span>
+<span class="badge"><span class="small"><span data-i18n="footSupport">الدعم:</span> <span class="kbd">+213699861542</span></span></span>
+</div>
+</div>
+
+<div>
+<h4 data-i18n="footLinks">روابط</h4>
+<a href="#features" data-i18n="navFeatures">المميزات</a>
+<a href="#market" data-i18n="navMarket">السوق</a>
+<a href="#pricing" data-i18n="navPricing">الباقات</a>
+<a href="#faq" data-i18n="navFaq">الأسئلة</a>
+</div>
+
+<div>
+<h4 data-i18n="footLegal">قانوني</h4>
+<a href="#" id="openTerms" data-i18n="terms">الشروط</a>
+<a href="#" id="openPrivacy" data-i18n="policy">الخصوصية</a>
+<a href="#" id="openContact" data-i18n="contact">تواصل</a>
+</div>
+</div>
+
+<div class="copy">
+<div>© <span id="year"></span> TrendMarketdz</div>
+<div class="small muted2" data-i18n="footNote">تم تصميم هذه الصفحة كعرض احترافي قابل للتطوير إلى منصة كاملة.</div>
+</div>
+</div>
+</footer>
+
+<!-- Modals -->
+<div class="overlay" id="modalSell" role="dialog" aria-modal="true" aria-label="Sell modal">
+<div class="modal">
+<div class="modalHead">
+<h3 data-i18n="sellTitle">ابدأ البيع — إنشاء منتج (تجريبي)</h3>
+<button class="btn icon ghost" data-close="modalSell" aria-label="Close">
+<span class="shine"></span>
+<svg viewBox="0 0 24 24" fill="none" aria-hidden="true" style="width:18px;height:18px">
+<path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+</svg>
+</button>
+</div>
+<div class="modalBody">
+<div class="modalGrid">
+<div class="field">
+<label data-i18n="fName">اسم المنتج</label>
+<input id="sellName" type="text" placeholder="مثال: كورس React احترافي" data-i18n-ph="sellNamePh"/>
+</div>
+<div class="field">
+<label data-i18n="fCat">التصنيف</label>
+<select id="sellCat">
+<option value="courses" data-i18n="catCourses">كورسات</option>
+<option value="templates" data-i18n="catTemplates">قوالب</option>
+<option value="apps" data-i18n="catApps">تطبيقات</option>
+<option value="ebooks" data-i18n="catEbooks">كتب</option>
+<option value="design" data-i18n="catDesign">تصاميم</option>
+<option value="services" data-i18n="catServices">خدمات</option>
+</select>
+</div>
+<div class="field">
+<label data-i18n="fPrice">السعر</label>
+<input id="sellPrice" type="number" min="0" step="1" value="3500" />
+</div>
+<div class="field">
+<label data-i18n="fCurrency">العملة</label>
+<select id="sellCurrency">
+<option value="DZD">DZD</option>
+<option value="USD">USD</option>
+<option value="EUR">EUR</option>
+</select>
+</div>
+<div class="field" style="grid-column: 1 / -1">
+<label data-i18n="fDesc">وصف مختصر</label>
+<textarea id="sellDesc" placeholder="اكتب وصفًا مختصرًا ومقنعًا..." data-i18n-ph="sellDescPh"></textarea>
+</div>
+</div>
+
+<div class="badge" style="margin-top: 12px">
+<span class="small" data-i18n="sellTip">ملاحظة: في النسخة الحقيقية سيتم رفع الملفات وتفعيل الحماية والتراخيص.</span>
+</div>
+</div>
+<div class="modalFoot">
+<button class="btn ghost" data-close="modalSell"><span class="shine"></span><span data-i18n="cancel">إلغاء</span></button>
+<button class="btn primary" id="createProduct"><span class="shine"></span><span data-i18n="create">إنشاء</span></button>
+</div>
+</div>
+</div>
+
+<div class="overlay" id="modalCart" role="dialog" aria-modal="true" aria-label="Cart modal">
+<div class="modal">
+<div class="modalHead">
+<h3 data-i18n="cartTitle">السلة</h3>
+<button class="btn icon ghost" data-close="modalCart" aria-label="Close">
+<span class="shine"></span>
+<svg viewBox="0 0 24 24" fill="none" aria-hidden="true" style="width:18px;height:18px">
+<path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+</svg>
+</button>
+</div>
+<div class="modalBody">
+<div class="modalGrid">
+<div>
+<div id="cartItems" class="grid" style="gap:10px"></div>
+<div class="small muted2" id="cartEmpty" style="display:none" data-i18n="cartEmpty">السلة فارغة — أضف منتجًا من السوق.</div>
+</div>
+<div class="card pad soft">
+<div class="row" style="justify-content:space-between">
+<div class="muted2 small" data-i18n="subtotal">المجموع</div>
+<div style="font-weight:900" id="cartTotal">0</div>
+</div>
+<div class="row" style="justify-content:space-between; margin-top: 8px">
+<div class="muted2 small" data-i18n="fees">رسوم (تجريبية)</div>
+<div class="muted" id="cartFees">0</div>
+</div>
+<div class="row" style="justify-content:space-between; margin-top: 8px; padding-top:10px; border-top:1px solid rgba(255,255,255,.10)">
+<div class="muted2 small" data-i18n="total">الإجمالي</div>
+<div style="font-weight:950; font-size: 18px" id="cartGrand">0</div>
+</div>
+
+<button class="btn primary" style="width:100%; margin-top: 12px" id="checkout">
+<span class="shine"></span>
+<span data-i18n="checkout">إكمال الشراء (تجريبي)</span>
+</button>
+<button class="btn ghost" style="width:100%" id="clearCart">
+<span class="shine"></span>
+<span data-i18n="clearCart">تفريغ السلة</span>
+</button>
+
+<div class="small muted2" style="margin-top:10px" data-i18n="checkoutNote">
+الشراء هنا تجريبي: سيتم إنشاء “طلب” وإتاحة رسالة واتساب جاهزة.
+</div>
+</div>
+</div>
+</div>
+<div class="modalFoot">
+<button class="btn ghost" data-close="modalCart"><span class="shine"></span><span data-i18n="close">إغلاق</span></button>
+</div>
+</div>
+</div>
+
+<div class="overlay" id="modalCheckout" role="dialog" aria-modal="true" aria-label="Checkout modal">
+<div class="modal">
+<div class="modalHead">
+<h3 data-i18n="payTitle">الدفع (محاكاة)</h3>
+<button class="btn icon ghost" data-close="modalCheckout" aria-label="Close">
+<span class="shine"></span>
+<svg viewBox="0 0 24 24" fill="none" aria-hidden="true" style="width:18px;height:18px">
+<path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+</svg>
+</button>
+</div>
+<div class="modalBody">
+<div class="modalGrid">
+<div class="card pad soft">
+<div class="row" style="justify-content:space-between; align-items:flex-start">
+<div>
+<div class="muted2 small" data-i18n="orderSum">ملخص الطلب</div>
+<div style="margin-top:6px; font-weight:900" id="payOrderTitle">—</div>
+<div class="small muted" id="payOrderMeta">—</div>
+</div>
+<span class="badge"><span class="small" data-i18n="secure">آمن</span></span>
+</div>
+<div style="margin-top: 10px" class="bar"><i id="payBar" style="--w:58%"></i></div>
+<div class="row" style="justify-content:space-between; margin-top: 10px">
+<span class="muted2 small" data-i18n="toPay">المبلغ</span>
+<span style="font-weight:950" id="payAmount">—</span>
+</div>
+</div>
+
+<div>
+<div class="field">
+<label data-i18n="payMethod">طريقة الدفع</label>
+<select id="payMethod">
+<option value="card" data-i18n="payCard">بطاقة/بوابة عالمية</option>
+<option value="local" data-i18n="payLocal">بوابة محلية</option>
+<option value="wallet" data-i18n="payWallet">محفظة رقمية</option>
+</select>
+</div>
+<div class="field">
+<label data-i18n="payEmail">البريد لاستلام الفاتورة</label>
+<input id="payEmail" type="email" placeholder="name@email.com" autocomplete="email"/>
+</div>
+<div class="field">
+<label data-i18n="payNote">ملاحظة</label>
+<textarea id="payNote" placeholder="اكتب أي ملاحظة..." data-i18n-ph="payNotePh"></textarea>
+</div>
+</div>
+</div>
+</div>
+<div class="modalFoot">
+<button class="btn ghost" data-close="modalCheckout"><span class="shine"></span><span data-i18n="cancel">إلغاء</span></button>
+<button class="btn primary" id="payNow"><span class="shine"></span><span data-i18n="payNow">ادفع الآن (تجريبي)</span></button>
+</div>
+</div>
+</div>
+
+<div class="overlay" id="modalInfo" role="dialog" aria-modal="true" aria-label="Info modal">
+<div class="modal">
+<div class="modalHead">
+<h3 id="infoTitle">—</h3>
+<button class="btn icon ghost" data-close="modalInfo" aria-label="Close">
+<span class="shine"></span>
+<svg viewBox="0 0 24 24" fill="none" aria-hidden="true" style="width:18px;height:18px">
+<path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+</svg>
+</button>
+</div>
+<div class="modalBody">
+<div id="infoBody" class="muted" style="line-height:1.9; font-size: 13.5px">—</div>
+</div>
+<div class="modalFoot">
+<button class="btn primary" data-close="modalInfo"><span class="shine"></span><span data-i18n="ok">حسنًا</span></button>
+</div>
+</div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite">
+<div class="card">
+<div class="row">
+<b id="toastTitle">—</b>
+<button class="btn icon ghost" id="toastClose" aria-label="Dismiss" style="box-shadow:none">
+<span class="shine"></span>
+<svg viewBox="0 0 24 24" fill="none" aria-hidden="true" style="width:16px;height:16px">
+<path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+</svg>
+</button>
+</div>
+<p id="toastMsg">—</p>
+</div>
+</div>
+
+<div class="wa" aria-label="WhatsApp support">
+<div class="hint" id="waHint" data-i18n="waHint">هل تحتاج مساعدة؟ اضغط لفتح واتساب.</div>
+<a class="fab" id="waFab" href="https://wa.me/213699861542?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%20%D8%8C%20%D8%A3%D8%AD%D8%AA%D8%A7%D8%AC%20%D9%85%D8%B3%D8%A7%D8%B9%D8%AF%D8%A9%20%D9%81%D9%8A%20TrendMarketdz" target="_blank" rel="noopener">
+<svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+<path d="M20 11.5a7.5 7.5 0 0 1-11.6 6.3L4 19l1.3-4.4A7.5 7.5 0 1 1 20 11.5Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+<path d="M9.2 9.1c.3-.6.6-.6.9-.5l.7.2c.2.1.3.2.3.4 0 .2 0 .4-.1.6-.1.3-.1.6.1.9.3.5.8 1.1 1.4 1.6.5.4 1.1.8 1.6 1 .3.1.6.1.9 0 .2-.1.4-.1.6 0 .2.1.3.2.4.4l.2.8c.1.3 0 .6-.4.8-.7.3-1.7.5-3.7-.5-2.4-1.2-4-3.9-4.2-4.3-.2-.4-.7-1.6-.1-2.6Z" fill="currentColor" opacity=".85"/>
+</svg>
+<div style="display:flex; flex-direction:column; line-height:1.1">
+<strong style="font-size:13px" data-i18n="waTitle">دعم واتساب</strong>
+<span class="small" style="opacity:.9">+213699861542</span>
+</div>
+</a>
+</div>
+
+<script>
+(function(){
+const $ = (q, el=document) => el.querySelector(q);
+const $$ = (q, el=document) => Array.from(el.querySelectorAll(q));
+
+// Year
+$('#year').textContent = new Date().getFullYear();
+
+// i18n
+const dict = {
+ar: {
+brandTag: "سوق رقمي عالمي للمنتجات الرقمية",
+navFeatures: "المميزات",
+navMarket: "السوق",
+navPricing: "الباقات",
+navDashboard: "لوحة التحكم",
+navFaq: "الأسئلة",
+searchPh: "ابحث عن: كورسات، قوالب...",
+searchPhShort: "ابحث عن منتجات...",
+sellBtn: "ابدأ البيع",
+badgeLive: "منصة جاهزة للإطلاق — تجربة عرض احترافية",
+heroA: "أكبر سوق احترافي للمنتجات الرقمية:",
+heroLead: "اشترِ وبِع كورسات، قوالب، تطبيقات، كتب إلكترونية، تصاميم وخدمات رقمية في منصة واحدة. نظام دفع متعدد العملات، ملفات آمنة، ولوحة تحكم ذكية للبائعين والمشترين — مع دعم واتساب احترافي.",
+ctaBrowse: "تصفح أفضل المنتجات",
+ctaWhatsApp: "تواصل عبر واتساب",
+ctaDemo: "عرض سريع للمنصة",
+stat1: "منتج رقمي قابل للبيع",
+stat2: "تجربة تصفح سريعة",
+stat3: "دعم واتساب",
+mockTitle: "لوحة مؤشرات",
+mockSub: "البائع",
+mockSecure: "مدفوعات آمنة",
+mockMulti: "عملات متعددة",
+mockPay: "جرّب الدفع (تجريبي)",
+kpi1: "المبيعات (هذا الأسبوع)",
+kpi1b: "مقارنة بالأسبوع الماضي",
+kpi2: "تحميلات آمنة",
+kpi2b: "روابط محمية + حد تنزيل",
+kpi2c: "تحميل",
+kpi3: "التحويل",
+kpi3b: "صفحات منتجات محسّنة",
+kpi4: "الدعم",
+kpi4b: "واتساب + تذاكر",
+kpi4c: "أقل من",
+kpi4d: "دقائق",
+
+featuresTitle: "لماذا TrendMarketdz؟",
+featuresSub: "تصميم حديث + بنية احترافية لنمو عالمي سريع.",
+featuresNote: "جاهز للتوسع (API + تطبيقات مستقبلية)",
+f1t: "حماية الملفات + تراخيص",
+f1d: "روابط تحميل مؤقتة، حدود تنزيل، ومفاتيح ترخيص للتطبيقات والقوالب.",
+f2t: "دفع متعدد العملات",
+f2d: "تجربة دفع سلسة بعملات مختلفة، فواتير إلكترونية، وإشعارات فورية.",
+f3t: "لوحة تحكم ذكية",
+f3d: "إحصاءات مبيعات، تتبع التحويل، إدارة منتجات، وقسائم خصم.",
+f4t: "تسويق رقمي مدمج",
+f4d: "SEO، صفحات هبوط، تتبع UTM، وإعدادات حملات سهلة للبائعين.",
+f5t: "متجر عالمي متعدد اللغات",
+f5d: "العربية/الإنجليزية/الفرنسية — تجربة ممتازة على الهاتف والكمبيوتر.",
+f6t: "دعم واتساب احترافي",
+f6d: "زر عائم، رسائل جاهزة، وربط الطلبات بالدعم لتجربة أسرع.",
+
+marketTitle: "السوق — منتجات مختارة",
+marketSub: "فلترة ذكية + بحث فوري. أضف للسلة وجرب “الشراء” التجريبي.",
+marketHint: "نصيحة: اكتب في البحث أو اختر تصنيف",
+catAll: "الكل",
+catCourses: "كورسات",
+catTemplates: "قوالب",
+catApps: "تطبيقات",
+catEbooks: "كتب",
+catDesign: "تصاميم",
+catServices: "خدمات",
+cartBtn: "السلة",
+
+trustTitle: "ثقة + جودة",
+t1t: "مراجعة منتجات",
+t1d: "سياسة جودة للملفات والوصف والصور لمنع المحتوى غير المناسب.",
+t2t: "حماية ضد الاحتيال",
+t2d: "بصمات تنزيل، تتبع طلبات، وإشعارات نشاط مشبوه.",
+t3t: "دعم سريع عبر واتساب",
+t3d: "رقم الدعم: ",
+supportBtn: "فتح محادثة الدعم",
+supportNote: "يتم فتح واتساب في نافذة جديدة مع رسالة جاهزة.",
+
+pricingTitle: "باقات تناسب البائعين والشركات",
+pricingSub: "اختر باقة، أو اطلب تخصيصًا (API + تطبيقات + تكاملات دفع).",
+pricingCustom: "اطلب عرضًا مخصصًا",
+popular: "الأكثر شيوعًا",
+perMonth: "/ شهر",
+choosePlan: "اختيار الباقة",
+startNow: "ابدأ الآن",
+talkToUs: "تواصل معنا",
+p1t: "Starter",
+p1d: "للبائعين الجدد — ارفع منتجاتك وابدأ البيع بسرعة.",
+p1f1: "حتى 10 منتجات",
+p1f2: "إحصاءات أساسية",
+p1f3: "دعم عبر واتساب",
+p2t: "Pro Seller",
+p2d: "للبيع بشكل احترافي — قسائم، تتبع، وحماية إضافية.",
+p2f1: "حتى 200 منتج",
+p2f2: "قسائم خصم + UTM",
+p2f3: "روابط تنزيل مؤقتة",
+p2f4: "تذاكر دعم + واتساب",
+p3t: "Enterprise",
+p3d: "للشركات — API، تكاملات دفع، وصلاحيات متقدمة.",
+p3f1: "عدد غير محدود من المنتجات",
+p3f2: "API + Webhooks",
+p3f3: "SSO + صلاحيات فريق",
+p3f4: "SLA دعم أولوية",
+
+dashTitle: "لوحة التحكم (نموذج تفاعلي)",
+dashSub: "حركات بسيطة + بيانات تجريبية توضح تجربة “Production-ready”.",
+refresh: "تحديث",
+download: "تحميل تقرير",
+d1: "صافي الإيرادات",
+d2: "طلبات اليوم",
+d3: "معدل التحويل",
+ctaTitle: "جاهز لبناء TrendMarketdz الحقيقي؟",
+ctaText: "هذه صفحة عرض فقط. يمكن تحويلها لمشروع كامل باستخدام Next.js + API + قاعدة بيانات + بوابات دفع حقيقية + نظام تراخيص + لوحة تحكم متقدمة.",
+roadmap: "خطة التنفيذ",
+askCost: "اطلب تقدير تكلفة",
+emailPh: "بريدك الإلكتروني",
+subscribe: "اشترك",
+privacy: "بالاشتراك أنت توافق على إرسال تحديثات — بدون إزعاج.",
+
+faqTitle: "الأسئلة الشائعة",
+faqSub: "إجابات سريعة عن الدفع، الملفات، والبائعين.",
+faqHint: "لم تجد جوابًا؟ تواصل عبر واتساب",
+q1: "كيف يتم تسليم المنتجات الرقمية بعد الدفع؟",
+a1: "يتم إنشاء رابط تنزيل آمن (مؤقت) داخل حساب المشتري، ويمكن أيضًا إرسال نسخة للملف/الترخيص عبر البريد حسب إعدادات المنتج.",
+q2: "هل يوجد دعم واتساب فعلاً؟",
+a2: "نعم. الرقم: +213699861542. يتم فتح محادثة برسالة جاهزة لتسريع الدعم.",
+q3: "هل المنصة متعددة اللغات؟",
+a3: "نعم: العربية، الإنجليزية، الفرنسية. يمكنك التبديل من أعلى الصفحة، مع دعم اتجاه RTL للعربية.",
+q4: "كيف يتم حماية حقوق البائعين؟",
+a4: "عبر روابط تنزيل مؤقتة، حدود تنزيل، بصمات تحميل، ومفاتيح ترخيص للمنتجات البرمجية — بالإضافة لإجراءات مكافحة الاحتيال.",
+q5: "هل هذا الموقع هو النسخة النهائية؟",
+a5: "هذه صفحة عرض (Prototype) بتصميم احترافي وتفاعل كامل على الواجهة الأمامية. يمكن تطويرها إلى منصة حقيقية مع Backend وPayments وDB وAPI.",
+q6: "هل يمكن إضافة بوابات دفع محلية/عالمية؟",
+a6: "نعم. يتم تصميم طبقة دفع قابلة للتبديل (Gateway Layer) لإضافة Stripe/PayPal أو حلول محلية حسب بلد الاستهداف.",
+
+footTag: "سوق عالمي للمنتجات الرقمية — سريع، آمن، وقابل للتوسع.",
+footStatus: "الحالة: عرض تجريبي",
+footSupport: "الدعم:",
+footLinks: "روابط",
+footLegal: "قانوني",
+terms: "الشروط",
+policy: "الخصوصية",
+contact: "تواصل",
+footNote: "تم تصميم هذه الصفحة كعرض احترافي قابل للتطوير إلى منصة كاملة.",
+
+sellTitle: "ابدأ البيع — إنشاء منتج (تجريبي)",
+fName: "اسم المنتج",
+sellNamePh: "مثال: كورس React احترافي",
+fCat: "التصنيف",
+fPrice: "السعر",
+fCurrency: "العملة",
+fDesc: "وصف مختصر",
+sellDescPh: "اكتب وصفًا مختصرًا ومقنعًا...",
+sellTip: "ملاحظة: في النسخة الحقيقية سيتم رفع الملفات وتفعيل الحماية والتراخيص.",
+cancel: "إلغاء",
+create: "إنشاء",
+
+cartTitle: "السلة",
+cartEmpty: "السلة فارغة — أضف منتجًا من السوق.",
+subtotal: "المجموع",
+fees: "رسوم (تجريبية)",
+total: "الإجمالي",
+checkout: "إكمال الشراء (تجريبي)",
+clearCart: "تفريغ السلة",
+checkoutNote: "الشراء هنا تجريبي: سيتم إنشاء “طلب” وإتاحة رسالة واتساب جاهزة.",
+close: "إغلاق",
+
+payTitle: "الدفع (محاكاة)",
+orderSum: "ملخص الطلب",
+secure: "آمن",
+toPay: "المبلغ",
+payMethod: "طريقة الدفع",
+payCard: "بطاقة/بوابة عالمية",
+payLocal: "بوابة محلية",
+payWallet: "محفظة رقمية",
+payEmail: "البريد لاستلام الفاتورة",
+payNote: "ملاحظة",
+payNotePh: "اكتب أي ملاحظة...",
+payNow: "ادفع الآن (تجريبي)",
+
+ok: "حسنًا",
+waHint: "هل تحتاج مساعدة؟ اضغط لفتح واتساب.",
+waTitle: "دعم واتساب",
+
+// Product actions
+add: "أضف للسلة",
+details: "تفاصيل",
+by: "بواسطة",
+instant: "تسليم فوري"
+},
+en: {
+brandTag: "Global digital marketplace",
+navFeatures: "Features",
+navMarket: "Marketplace",
+navPricing: "Pricing",
+navDashboard: "Dashboard",
+navFaq: "FAQ",
+searchPh: "Search: courses, templates...",
+searchPhShort: "Search products...",
+sellBtn: "Start selling",
+badgeLive: "Launch-ready — professional demo experience",
+heroA: "The most professional digital marketplace:",
+heroLead: "Buy & sell courses, templates, apps, ebooks, designs and digital services in one place. Multi-currency payments, secure delivery, and smart dashboards — with professional WhatsApp support.",
+ctaBrowse: "Browse top products",
+ctaWhatsApp: "Chat on WhatsApp",
+ctaDemo: "Quick platform tour",
+stat1: "digital items ready to sell",
+stat2: "fast browsing experience",
+stat3: "WhatsApp support",
+mockTitle: "Insights",
+mockSub: "Seller",
+mockSecure: "Secure payments",
+mockMulti: "Multi-currency",
+mockPay: "Try checkout (demo)",
+kpi1: "Sales (this week)",
+kpi1b: "vs last week",
+kpi2: "Secure downloads",
+kpi2b: "Protected links + limits",
+kpi2c: "downloads",
+kpi3: "Conversion",
+kpi3b: "Optimized pages",
+kpi4: "Support",
+kpi4b: "WhatsApp + tickets",
+kpi4c: "Under",
+kpi4d: "minutes",
+
+featuresTitle: "Why TrendMarketdz?",
+featuresSub: "Modern design + solid foundation for global growth.",
+featuresNote: "Scale-ready (API + future apps)",
+f1t: "File protection + licensing",
+f1d: "Expiring links, download limits, and license keys for apps/templates.",
+f2t: "Multi-currency payments",
+f2d: "Smooth checkout, invoices, and real-time notifications.",
+f3t: "Smart dashboards",
+f3d: "Sales analytics, conversion tracking, product management, coupons.",
+f4t: "Built-in marketing",
+f4d: "SEO, landing pages, UTM tracking, seller-friendly campaigns.",
+f5t: "Multilingual storefront",
+f5d: "Arabic/English/French — great on mobile and desktop.",
+f6t: "Professional WhatsApp support",
+f6d: "Floating button, templates, and order-linked support.",
+
+marketTitle: "Marketplace — curated picks",
+marketSub: "Smart filters + instant search. Add to cart and try demo checkout.",
+marketHint: "Tip: type in search or choose a category",
+catAll: "All",
+catCourses: "Courses",
+catTemplates: "Templates",
+catApps: "Apps",
+catEbooks: "Ebooks",
+catDesign: "Design",
+catServices: "Services",
+cartBtn: "Cart",
+
+trustTitle: "Trust + quality",
+t1t: "Product review",
+t1d: "Quality checks for files, descriptions, and visuals.",
+t2t: "Anti-fraud",
+t2d: "Download fingerprinting, order tracking, suspicious activity alerts.",
+t3t: "Fast WhatsApp support",
+t3d: "Support number: ",
+supportBtn: "Open support chat",
+supportNote: "WhatsApp opens in a new tab with a prefilled message.",
+
+pricingTitle: "Plans for sellers & companies",
+pricingSub: "Pick a plan or request a custom build (API + apps + payment integrations).",
+pricingCustom: "Request custom quote",
+popular: "Most popular",
+perMonth: "/ month",
+choosePlan: "Choose plan",
+startNow: "Get started",
+talkToUs: "Talk to us",
+p1t: "Starter",
+p1d: "For new sellers — upload and sell quickly.",
+p1f1: "Up to 10 products",
+p1f2: "Basic analytics",
+p1f3: "WhatsApp support",
+p2t: "Pro Seller",
+p2d: "For serious selling — coupons, tracking, extra protection.",
+p2f1: "Up to 200 products",
+p2f2: "Coupons + UTM",
+p2f3: "Expiring download links",
+p2f4: "Tickets + WhatsApp",
+p3t: "Enterprise",
+p3d: "For companies — API, payments, advanced roles.",
+p3f1: "Unlimited products",
+p3f2: "API + webhooks",
+p3f3: "SSO + team roles",
+p3f4: "Priority support SLA",
+
+dashTitle: "Dashboard (interactive demo)",
+dashSub: "Small animations + sample metrics for a production feel.",
+refresh: "Refresh",
+download: "Download report",
+d1: "Net revenue",
+d2: "Today's orders",
+d3: "Conversion rate",
+ctaTitle: "Ready to build the real TrendMarketdz?",
+ctaText: "This is a showcase page. It can be upgraded into a full platform with Next.js + API + DB + real payments + licensing + advanced dashboards.",
+roadmap: "Implementation roadmap",
+askCost: "Request estimate",
+emailPh: "Your email",
+subscribe: "Subscribe",
+privacy: "By subscribing you agree to receive updates — no spam.",
+
+faqTitle: "FAQ",
+faqSub: "Quick answers about payments, delivery, and sellers.",
+faqHint: "Still need help? WhatsApp us",
+q1: "How are digital products delivered after payment?",
+a1: "A secure, expiring download link is created in the buyer account. Optional email delivery and license keys can be configured per product.",
+q2: "Is WhatsApp support available?",
+a2: "Yes. Number: +213699861542. It opens with a ready message for faster support.",
+q3: "Is the platform multilingual?",
+a3: "Yes: Arabic, English, French. Switch from the top; RTL is supported for Arabic.",
+q4: "How do you protect sellers’ rights?",
+a4: "Expiring links, download limits, download fingerprints, license keys, and anti-fraud signals.",
+q5: "Is this the final website?",
+a5: "This is a front-end prototype with professional design and interactions. It can be turned into a real platform with backend, payments, DB, and APIs.",
+q6: "Can you integrate local/global payment gateways?",
+a6: "Yes. A gateway layer can support Stripe/PayPal and local providers depending on target markets.",
+
+footTag: "Global digital marketplace — fast, secure, scalable.",
+footStatus: "Status: demo",
+footSupport: "Support:",
+footLinks: "Links",
+footLegal: "Legal",
+terms: "Terms",
+policy: "Privacy",
+contact: "Contact",
+footNote: "This page is a professional demo that can evolve into a full platform.",
+
+sellTitle: "Start selling — Create product (demo)",
+fName: "Product name",
+sellNamePh: "e.g., Professional React Course",
+fCat: "Category",
+fPrice: "Price",
+fCurrency: "Currency",
+fDesc: "Short description",
+sellDescPh: "Write a compelling short description...",
+sellTip: "Note: real version includes file upload, protection and licensing.",
+cancel: "Cancel",
+create: "Create",
+
+cartTitle: "Cart",
+cartEmpty: "Your cart is empty — add items from the marketplace.",
+subtotal: "Subtotal",
+fees: "Fees (demo)",
+total: "Total",
+checkout: "Checkout (demo)",
+clearCart: "Clear cart",
+checkoutNote: "Demo only: we’ll create an ‘order’ and provide a WhatsApp-ready message.",
+close: "Close",
+
+payTitle: "Checkout (simulation)",
+orderSum: "Order summary",
+secure: "Secure",
+toPay: "Amount",
+payMethod: "Payment method",
+payCard: "Card / global gateway",
+payLocal: "Local gateway",
+payWallet: "Digital wallet",
+payEmail: "Email for invoice",
+payNote: "Note",
+payNotePh: "Write any note...",
+payNow: "Pay now (demo)",
+
+ok: "OK",
+waHint: "Need help? Tap to open WhatsApp.",
+waTitle: "WhatsApp Support",
+
+add: "Add to cart",
+details: "Details",
+by: "by",
+instant: "Instant delivery"
+},
+fr: {
+brandTag: "Marketplace digital mondial",
+navFeatures: "Fonctionnalités",
+navMarket: "Marché",
+navPricing: "Tarifs",
+navDashboard: "Tableau de bord",
+navFaq: "FAQ",
+searchPh: "Rechercher : cours, modèles...",
+searchPhShort: "Rechercher des produits...",
+sellBtn: "Commencer à vendre",
+badgeLive: "Prêt au lancement — démo professionnelle",
+heroA: "Le plus grand marché de produits numériques :",
+heroLead: "Achetez et vendez des cours, modèles, apps, ebooks, designs et services numériques. Paiement multi-devises, livraison sécurisée et tableaux de bord intelligents — avec support WhatsApp professionnel.",
+ctaBrowse: "Parcourir les produits",
+ctaWhatsApp: "Contacter sur WhatsApp",
+ctaDemo: "Visite rapide",
+stat1: "articles numériques prêts",
+stat2: "navigation rapide",
+stat3: "support WhatsApp",
+mockTitle: "Aperçu",
+mockSub: "Vendeur",
+mockSecure: "Paiements sécurisés",
+mockMulti: "Multi-devises",
+mockPay: "Tester le paiement (démo)",
+kpi1: "Ventes (semaine)",
+kpi1b: "vs semaine dernière",
+kpi2: "Téléchargements sûrs",
+kpi2b: "Liens protégés + limites",
+kpi2c: "téléch.",
+kpi3: "Conversion",
+kpi3b: "Pages optimisées",
+kpi4: "Support",
+kpi4b: "WhatsApp + tickets",
+kpi4c: "Moins de",
+kpi4d: "minutes",
+
+featuresTitle: "Pourquoi TrendMarketdz ?",
+featuresSub: "Design moderne + base solide pour une croissance mondiale.",
+featuresNote: "Prêt à évoluer (API + apps)",
+f1t: "Protection + licences",
+f1d: "Liens expirants, limites de téléchargement, clés de licence.",
+f2t: "Paiement multi-devises",
+f2d: "Checkout fluide, factures, notifications instantanées.",
+f3t: "Tableau de bord intelligent",
+f3d: "Analyses ventes, conversion, gestion produits, coupons.",
+f4t: "Marketing intégré",
+f4d: "SEO, landing pages, UTM, campagnes simples.",
+f5t: "Multi-langues",
+f5d: "Arabe/Anglais/Français — excellent sur mobile.",
+f6t: "Support WhatsApp pro",
+f6d: "Bouton flottant, messages prêts, support lié aux commandes.",
+
+marketTitle: "Marché — sélection",
+marketSub: "Filtres intelligents + recherche instantanée. Ajoutez au panier et testez le checkout.",
+marketHint: "Astuce : tapez dans la recherche ou choisissez une catégorie",
+catAll: "Tout",
+catCourses: "Cours",
+catTemplates: "Modèles",
+catApps: "Apps",
+catEbooks: "Ebooks",
+catDesign: "Design",
+catServices: "Services",
+cartBtn: "Panier",
+
+trustTitle: "Confiance + qualité",
+t1t: "Revue des produits",
+t1d: "Contrôle qualité des fichiers, descriptions et visuels.",
+t2t: "Anti-fraude",
+t2d: "Empreintes, suivi commandes, alertes activité suspecte.",
+t3t: "Support WhatsApp rapide",
+t3d: "Numéro : ",
+supportBtn: "Ouvrir le support",
+supportNote: "WhatsApp s’ouvre avec un message prérempli.",
+
+pricingTitle: "Offres pour vendeurs & entreprises",
+pricingSub: "Choisissez une offre ou demandez du sur-mesure (API + apps + paiements).",
+pricingCustom: "Demander un devis",
+popular: "Populaire",
+perMonth: "/ mois",
+choosePlan: "Choisir",
+startNow: "Démarrer",
+talkToUs: "Nous contacter",
+p1t: "Starter",
+p1d: "Pour débuter — vendez rapidement.",
+p1f1: "Jusqu’à 10 produits",
+p1f2: "Analytics basiques",
+p1f3: "Support WhatsApp",
+p2t: "Pro Seller",
+p2d: "Pour vendre sérieusement — coupons, tracking, protection.",
+p2f1: "Jusqu’à 200 produits",
+p2f2: "Coupons + UTM",
+p2f3: "Liens expirants",
+p2f4: "Tickets + WhatsApp",
+p3t: "Enterprise",
+p3d: "Pour entreprises — API, paiements, rôles.",
+p3f1: "Produits illimités",
+p3f2: "API + webhooks",
+p3f3: "SSO + rôles",
+p3f4: "SLA prioritaire",
+
+dashTitle: "Tableau de bord (démo interactive)",
+dashSub: "Animations + métriques d’exemple pour un rendu production.",
+refresh: "Rafraîchir",
+download: "Télécharger",
+d1: "Revenu net",
+d2: "Commandes du jour",
+d3: "Taux de conversion",
+ctaTitle: "Prêt à construire TrendMarketdz ?",
+ctaText: "Ceci est une vitrine. Elle peut devenir une plateforme complète avec Next.js + API + DB + paiements + licences + dashboards.",
+roadmap: "Feuille de route",
+askCost: "Demander une estimation",
+emailPh: "Votre email",
+subscribe: "S’abonner",
+privacy: "En vous abonnant, vous acceptez de recevoir des infos — sans spam.",
+
+faqTitle: "FAQ",
+faqSub: "Réponses rapides sur paiements et livraison.",
+faqHint: "Besoin d’aide ? WhatsApp",
+q1: "Comment les produits sont livrés après paiement ?",
+a1: "Un lien de téléchargement sécurisé (expirant) est créé dans le compte. Envoi email et licences possibles selon le produit.",
+q2: "Le support WhatsApp est-il disponible ?",
+a2: "Oui. Numéro : +213699861542. Message prêt pour accélérer l’assistance.",
+q3: "La plateforme est-elle multi-langues ?",
+a3: "Oui : Arabe, Anglais, Français. Changement en haut; RTL pour l’arabe.",
+q4: "Comment protéger les droits des vendeurs ?",
+a4: "Liens expirants, limites, empreintes, clés de licence, signaux anti-fraude.",
+q5: "Est-ce le site final ?",
+a5: "C’est un prototype front-end. Il peut être transformé en plateforme réelle avec backend, paiements, DB et APIs.",
+q6: "Peut-on intégrer des passerelles locales/globales ?",
+a6: "Oui. Une couche “gateway” permet Stripe/PayPal et des solutions locales selon les marchés.",
+
+footTag: "Marketplace numérique — rapide, sécurisé, scalable.",
+footStatus: "Statut : démo",
+footSupport: "Support :",
+footLinks: "Liens",
+footLegal: "Légal",
+terms: "Conditions",
+policy: "Confidentialité",
+contact: "Contact",
+footNote: "Page vitrine professionnelle évolutive vers une plateforme complète.",
+
+sellTitle: "Commencer à vendre — Créer un produit (démo)",
+fName: "Nom du produit",
+sellNamePh: "Ex : Cours React Pro",
+fCat: "Catégorie",
+fPrice: "Prix",
+fCurrency: "Devise",
+fDesc: "Description courte",
+sellDescPh: "Écrivez une description convaincante...",
+sellTip: "Note : version réelle = upload, protection, licences.",
+cancel: "Annuler",
+create: "Créer",
+
+cartTitle: "Panier",
+cartEmpty: "Panier vide — ajoutez des produits.",
+subtotal: "Sous-total",
+fees: "Frais (démo)",
+total: "Total",
+checkout: "Payer (démo)",
+clearCart: "Vider le panier",
+checkoutNote: "Démo : création d’une ‘commande’ + message WhatsApp prêt.",
+close: "Fermer",
+
+payTitle: "Paiement (simulation)",
+orderSum: "Résumé",
+secure: "Sécurisé",
+toPay: "Montant",
+payMethod: "Méthode",
+payCard: "Carte / gateway globale",
+payLocal: "Gateway locale",
+payWallet: "Portefeuille",
+payEmail: "Email facture",
+payNote: "Note",
+payNotePh: "Écrivez une note...",
+payNow: "Payer (démo)",
+
+ok: "OK",
+waHint: "Besoin d’aide ? Ouvrir WhatsApp.",
+waTitle: "Support WhatsApp",
+
+add: "Ajouter",
+details: "Détails",
+by: "par",
+instant: "Livraison instantanée"
+}
+};
+
+function applyI18n(lang){
+const d = dict[lang] || dict.ar;
+document.documentElement.lang = lang;
+const dir = (lang === 'ar') ? 'rtl' : 'ltr';
+document.documentElement.dir = dir;
+
+$$('[data-i18n]').forEach(el=>{
+const key = el.getAttribute('data-i18n');
+if(d[key] != null) el.textContent = d[key];
+});
+$$('[data-i18n-ph]').forEach(el=>{
+const key = el.getAttribute('data-i18n-ph');
+if(d[key] != null) el.setAttribute('placeholder', d[key]);
+});
+
+// Keep selects synced
+$('#lang').value = lang;
+$('#langMobile').value = lang;
+
+// Update dynamic labels
+renderProducts();
+renderCart();
+updatePlanPrices();
+}
+
+// Theme
+const THEME_KEY = 'tm_theme';
+const LANG_KEY = 'tm_lang';
+const savedTheme = localStorage.getItem(THEME_KEY);
+if(savedTheme === 'light') document.body.classList.add('light');
+
+function toggleTheme(){
+document.body.classList.toggle('light');
+localStorage.setItem(THEME_KEY, document.body.classList.contains('light') ? 'light' : 'dark');
+}
+$('#toggleTheme').addEventListener('click', toggleTheme);
+$('#toggleThemeMobile').addEventListener('click', toggleTheme);
+
+// Drawer
+const drawer = $('#drawer');
+const backdrop = $('#backdrop');
+function openDrawer(){
+drawer.classList.add('open');
+backdrop.classList.add('show');
+}
+function closeDrawer(){
+drawer.classList.remove('open');
+backdrop.classList.remove('show');
+}
+$('#openDrawer').addEventListener('click', openDrawer);
+$('#closeDrawer').addEventListener('click', closeDrawer);
+backdrop.addEventListener('click', closeDrawer);
+$$('#drawer a').forEach(a=>a.addEventListener('click', closeDrawer));
+
+// Modal helpers
+function openModal(id){
+const el = document.getElementById(id);
+if(!el) return;
+el.classList.add('open');
+document.body.style.overflow = 'hidden';
+}
+function closeModal(id){
+const el = document.getElementById(id);
+if(!el) return;
+el.classList.remove('open');
+document.body.style.overflow = '';
+}
+$$('[data-close]').forEach(btn=>{
+btn.addEventListener('click', () => closeModal(btn.getAttribute('data-close')));
+});
+window.addEventListener('keydown', (e)=>{
+if(e.key === 'Escape'){
+$$('.overlay.open').forEach(o=>o.classList.remove('open'));
+document.body.style.overflow = '';
+closeDrawer();
+}
+// Ctrl/Cmd+K focus search
+if((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k'){
+e.preventDefault();
+$('#search').focus();
+}
+});
+
+// Button shine tracking
+function attachShine(btn){
+btn.addEventListener('pointermove', (e)=>{
+const r = btn.getBoundingClientRect();
+const x = ((e.clientX - r.left) / r.width) * 100;
+const y = ((e.clientY - r.top) / r.height) * 100;
+btn.style.setProperty('--x', x + '%');
+btn.style.setProperty('--y', y + '%');
+});
+}
+$$('.btn').forEach(attachShine);
+
+// WhatsApp hint
+const waHint = $('#waHint');
+let waTimer = setTimeout(()=> waHint.classList.add('show'), 1200);
+$('#waFab').addEventListener('click', ()=> waHint.classList.remove('show'));
+window.addEventListener('scroll', ()=>{
+if(window.scrollY > 60) waHint.classList.remove('show');
+}, {passive:true});
+
+// Support button => WhatsApp
+$('#openSupport').addEventListener('click', ()=>{
+const lang = $('#lang').value;
+const msg = (lang==='ar')
+? "مرحباً TrendMarketdz، أحتاج مساعدة بخصوص الشراء/البيع."
+: (lang==='fr')
+? "Bonjour TrendMarketdz, j'ai besoin d'aide pour acheter/vendre."
+: "Hi TrendMarketdz, I need help with buying/selling.";
+window.open('https://wa.me/213699861542?text=' + encodeURIComponent(msg), '_blank', 'noopener');
+});
+
+// Info modal
+function showInfo(title, body){
+$('#infoTitle').textContent = title;
+$('#infoBody').innerHTML = body;
+openModal('modalInfo');
+}
+
+// Terms/Privacy/Contact
+$('#openTerms').addEventListener('click', (e)=>{
+e.preventDefault();
+const lang = $('#lang').value;
+const t = (dict[lang]||dict.ar);
+showInfo(
+(lang==='fr'?'Conditions':lang==='en'?'Terms':'الشروط'),
+(lang==='ar')
+? "هذه صفحة عرض. في النسخة النهائية سيتم إعداد شروط استخدام واضحة (حقوق الملكية، سياسة الإرجاع، استخدام التراخيص، ومنع إعادة التوزيع)."
+: (lang==='fr')
+? "Page démo. La version finale inclura des conditions complètes (propriété, remboursements, licences, anti-redistribution)."
+: "Demo page. Final version will include full terms (ownership, refunds, licensing, anti-redistribution)."
+);
+});
+$('#openPrivacy').addEventListener('click', (e)=>{
+e.preventDefault();
+const lang = $('#lang').value;
+showInfo(
+(lang==='fr'?'Confidentialité':lang==='en'?'Privacy':'الخصوصية'),
+(lang==='ar')
+? "سيتم جمع أقل قدر من البيانات اللازمة لمعالجة الطلبات (البريد، سجل المشتريات). سيتم تطبيق تشفير واتصالات آمنة وإعدادات موافقة."
+: (lang==='fr')
+? "Collecte minimale (email, historique). Connexions chiffrées, consentement et sécurité."
+: "Minimal data collection (email, purchase history). Encrypted connections, consent, and security."
+);
+});
+$('#openContact').addEventListener('click', (e)=>{
+e.preventDefault();
+const lang = $('#lang').value;
+const msg = (lang==='ar')
+? "تواصل معنا عبر واتساب: <span class='kbd'>+213699861542</span><br/><br/>أو اضغط الزر العائم في أسفل الصفحة."
+: (lang==='fr')
+? "Contactez-nous sur WhatsApp : <span class='kbd'>+213699861542</span><br/><br/>Ou utilisez le bouton flottant."
+: "Contact us on WhatsApp: <span class='kbd'>+213699861542</span><br/><br/>Or use the floating button.";
+showInfo(lang==='fr'?'Contact':lang==='en'?'Contact':'تواصل', msg);
+});
+
+// Products (demo data)
+const productsData = [
+{id:'p1', cat:'courses', title:{ar:'كورس تسويق رقمي عملي', en:'Hands-on Digital Marketing Course', fr:'Cours Marketing Digital (pratique)'}, author:'TrendAcademy', rating:4.8, price:{DZD:4900, USD:29, EUR:25}, tag:{ar:'تسليم فوري', en:'Instant delivery', fr:'Livraison instantanée'}},
+{id:'p2', cat:'templates', title:{ar:'قالب متجر Next.js احترافي', en:'Professional Next.js Store Template', fr:'Template boutique Next.js pro'}, author:'UIForge', rating:4.7, price:{DZD:8500, USD:49, EUR:45}, tag:{ar:'جاهز للإطلاق', en:'Launch-ready', fr:'Prêt au lancement'}},
+{id:'p3', cat:'apps', title:{ar:'تطبيق إدارة مهام (Premium)', en:'Task Manager App (Premium)', fr:'App gestion de tâches (Premium)'}, author:'DevLabs', rating:4.6, price:{DZD:12000, USD:69, EUR:64}, tag:{ar:'ترخيص', en:'License', fr:'Licence'}},
+{id:'p4', cat:'ebooks', title:{ar:'كتاب: بناء علامة تجارية', en:'Ebook: Building a Brand', fr:'Ebook : Construire une marque'}, author:'MarketPro', rating:4.5, price:{DZD:2900, USD:15, EUR:13}, tag:{ar:'PDF + تمارين', en:'PDF + exercises', fr:'PDF + exercices'}},
+{id:'p5', cat:'design', title:{ar:'حزمة UI Kit زجاجي', en:'Glassmorphism UI Kit', fr:'UI Kit Glassmorphism'}, author:'DesignHub', rating:4.9, price:{DZD:6700, USD:39, EUR:35}, tag:{ar:'Figma', en:'Figma', fr:'Figma'}},
+{id:'p6', cat:'services', title:{ar:'خدمة: إعداد متجر رقمي', en:'Service: Digital Store Setup', fr:'Service : Configuration boutique digitale'}, author:'TrendStudio', rating:4.8, price:{DZD:25000, USD:149, EUR:139}, tag:{ar:'خلال 48 ساعة', en:'Within 48h', fr:'Sous 48h'}}
+];
+
+let state = {
+lang: localStorage.getItem(LANG_KEY) || 'ar',
+cat: 'all',
+query: '',
+currency: 'DZD',
+cart: []
+};
+
+// Initialize currency
+$('#currency').value = state.currency;
+
+// Search
+function setQuery(q){
+state.query = (q || '').trim().toLowerCase();
+renderProducts();
+}
+$('#search').addEventListener('input', e => setQuery(e.target.value));
+$('#searchMobile').addEventListener('input', e => setQuery(e.target.value));
+
+// Category tabs
+$$('.tab').forEach(tab=>{
+tab.addEventListener('click', ()=>{
+$$('.tab').forEach(t=>{ t.classList.remove('active'); t.setAttribute('aria-selected','false'); });
+tab.classList.add('active');
+tab.setAttribute('aria-selected','true');
+state.cat = tab.dataset.cat;
+renderProducts();
+});
+});
+
+// Currency
+$('#currency').addEventListener('change', (e)=>{
+state.currency = e.target.value;
+renderProducts();
+renderCart();
+updatePlanPrices();
+});
+
+// Language
+function setLang(lang){
+state.lang = lang;
+localStorage.setItem(LANG_KEY, lang);
+applyI18n(lang);
+}
+$('#lang').addEventListener('change', (e)=> setLang(e.target.value));
+$('#langMobile').addEventListener('change', (e)=> setLang(e.target.value));
+
+// Product rendering
+function fmtMoney(v){
+const c = state.currency;
+// simple formatting
+const n = Number(v||0);
+if(c === 'DZD') return `${n.toLocaleString(state.lang==='ar'?'ar-DZ':(state.lang==='fr'?'fr-FR':'en-US'))} ${c}`;
+return `${c} ${n.toLocaleString(state.lang==='fr'?'fr-FR':'en-US')}`;
+}
+
+function stars(r){
+const full = Math.round(Math.min(5, Math.max(0, r)));
+return Array.from({length: full}).map(()=>'<i></i>').join('');
+}
+
+function productTitle(p){
+return (p.title && (p.title[state.lang] || p.title.ar)) || '';
+}
+
+function renderProducts(){
+const t = dict[state.lang] || dict.ar;
+const list = productsData.filter(p=>{
+const okCat = state.cat === 'all' || p.cat === state.cat;
+const q = state.query;
+if(!q) return okCat;
+const hay = (productTitle(p) + ' ' + p.author + ' ' + p.cat).toLowerCase();
+return okCat && hay.includes(q);
+});
+
+const root = $('#products');
+root.innerHTML = list.map(p=>{
+const title = productTitle(p);
+const money = fmtMoney(p.price[state.currency]);
+const tag = (p.tag && (p.tag[state.lang] || p.tag.ar)) || t.instant;
+return `
+<article class="product" data-id="${p.id}" data-cat="${p.cat}">
+<div class="thumb" aria-hidden="true"></div>
+<div class="row" style="justify-content:space-between; align-items:flex-start; gap:10px">
+<div style="min-width: 0">
+<h4 title="${escapeHtml(title)}" style="overflow:hidden; text-overflow:ellipsis; white-space:nowrap">${escapeHtml(title)}</h4>
+<div class="metaLeft" style="margin-top:4px">
+<span class="badge" style="padding:6px 10px"><span class="small">${escapeHtml(tag)}</span></span>
+<span class="small muted2">${t.by} ${escapeHtml(p.author)}</span>
+</div>
+</div>
+<div style="text-align:end">
+<div class="price"><span>${escapeHtml(money)}</span></div>
+<div class="metaLeft" style="justify-content:flex-end; margin-top: 6px">
+<span class="stars" aria-label="rating">${stars(p.rating)}</span>
+<span class="small muted2">${p.rating.toFixed(1)}</span>
+</div>
+</div>
+</div>
+
+<div class="actions">
+<button class="btn primary" data-action="add" data-id="${p.id}">
+<span class="shine"></span>
+<span>${t.add}</span>
+</button>
+<button class="btn" data-action="details" data-id="${p.id}">
+<span class="shine"></span>
+<span>${t.details}</span>
+</button>
+</div>
+</article>
+`;
+}).join('');
+
+// Hook actions
+$$('[data-action="add"]', root).forEach(b=> b.addEventListener('click', ()=> addToCart(b.dataset.id)));
+$$('[data-action="details"]', root).forEach(b=> b.addEventListener('click', ()=> showProductDetails(b.dataset.id)));
+}
+
+function showProductDetails(id){
+const p = productsData.find(x=>x.id===id);
+if(!p) return;
+const t = dict[state.lang] || dict.ar;
+const title = productTitle(p);
+const price = fmtMoney(p.price[state.currency]);
+const body = `
+<div class="card pad soft" style="margin-bottom:12px">
+<div style="font-weight:900; font-size:16px">${escapeHtml(title)}</div>
+<div class="row" style="justify-content:space-between; margin-top:8px; flex-wrap:wrap">
+<div class="muted2 small">${t.by} <span class="kbd">${escapeHtml(p.author)}</span></div>
+<div class="badge" style="padding:6px 10px"><span class="small">${escapeHtml(price)}</span></div>
+</div>
+<div class="row" style="margin-top:10px; flex-wrap:wrap">
+<span class="stars" aria-label="rating">${stars(p.rating)}</span>
+<span class="small muted2">${p.rating.toFixed(1)}</span>
+<span class="badge" style="padding:6px 10px"><span class="small">${escapeHtml((p.tag && (p.tag[state.lang] || p.tag.ar)) || t.instant)}</span></span>
+</div>
+</div>
+
+<div class="muted" style="line-height:1.9; font-size:13.5px">
+${state.lang==='ar'
+? "وصف تجريبي: منتج عالي الجودة مع ملفات منظمة، تعليمات واضحة، وتحديثات مستقبلية. يمكن إضافة ترخيص، حماية تنزيل، وسياسة دعم حسب الباقة."
+: state.lang==='fr'
+? "Description démo : produit de qualité, fichiers bien organisés, instructions claires et mises à jour. Licences, protection et support peuvent être ajoutés."
+: "Demo description: high-quality deliverables, clear instructions, and future updates. Licensing, download protection, and support policy can be configured."
+}
+</div>
+
+<div class="row" style="gap:10px; margin-top:12px; flex-wrap:wrap; justify-content:flex-end">
+<button class="btn primary" onclick="window.__tm_add('${id}')"><span class="shine"></span>${t.add}</button>
+<button class="btn" onclick="window.__tm_closeInfo()"><span class="shine"></span>${state.lang==='fr'?'Fermer':state.lang==='en'?'Close':'إغلاق'}</button>
+</div>
+`;
+showInfo(t.details, body);
+}
+
+// Expose small helpers for modal buttons
+window.__tm_add = (id)=> addToCart(id);
+window.__tm_closeInfo = ()=> closeModal('modalInfo');
+
+function escapeHtml(str){
+return (str||'').replace(/[&<>"']/g, (m)=>({
+'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'
+}[m]));
+}
+
+// Cart
+function addToCart(id){
+const item = productsData.find(p=>p.id===id);
+if(!item) return;
+const existing = state.cart.find(x=>x.id===id);
+if(existing) existing.qty += 1;
+else state.cart.push({id, qty:1});
+renderCart();
+toast(
+(state.lang==='fr'?'Ajouté au panier':state.lang==='en'?'Added to cart':'تمت الإضافة للسلة'),
+(state.lang==='fr'?'Vous pouvez ouvrir le panier pour payer (démo).':state.lang==='en'?'Open the cart to checkout (demo).':'يمكنك فتح السلة لإكمال الشراء (تجريبي).')
+);
+}
+
+function removeFromCart(id){
+state.cart = state.cart.filter(x=>x.id!==id);
+renderCart();
+}
+
+function setQty(id, qty){
+qty = Math.max(1, Math.min(99, qty|0));
+const it = state.cart.find(x=>x.id===id);
+if(!it) return;
+it.qty = qty;
+renderCart();
+}
+
+function cartSubtotal(){
+return state.cart.reduce((sum, it)=>{
+const p = productsData.find(x=>x.id===it.id);
+if(!p) return sum;
+return sum + (p.price[state.currency] * it.qty);
+}, 0);
+}
+
+function renderCart(){
+$('#cartCount').textContent = String(state.cart.reduce((a,c)=>a+c.qty,0));
+
+const itemsRoot = $('#cartItems');
+const empty = $('#cartEmpty');
+
+if(state.cart.length === 0){
+itemsRoot.innerHTML = '';
+empty.style.display = 'block';
+} else {
+empty.style.display = 'none';
+itemsRoot.innerHTML = state.cart.map(it=>{
+const p = productsData.find(x=>x.id===it.id);
+if(!p) return '';
+const title = productTitle(p);
+const price = p.price[state.currency];
+const line = price * it.qty;
+return `
+<div class="card pad soft" style="padding:12px">
+<div class="row" style="justify-content:space-between; align-items:flex-start; gap:10px; flex-wrap:wrap">
+<div style="min-width: 200px; flex:1">
+<div style="font-weight:900; font-size:13.5px">${escapeHtml(title)}</div>
+<div class="small muted2" style="margin-top:4px">${escapeHtml(p.author)} • <span class="kbd">${escapeHtml(p.cat)}</span></div>
+</div>
+
+<div class="row" style="gap:8px; flex-wrap:wrap; justify-content:flex-end">
+<div class="badge" style="padding:6px 10px"><span class="small">${escapeHtml(fmtMoney(price))}</span></div>
+<input aria-label="Qty" type="number" min="1" max="99" value="${it.qty}" data-qty="${it.id}"
+style="width:86px; padding:10px 10px; border-radius:14px; border:1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.04); outline:none"/>
+<button class="btn icon ghost" data-remove="${it.id}" aria-label="Remove" style="box-shadow:none">
+<span class="shine"></span>
+<svg viewBox="0 0 24 24" fill="none" aria-hidden="true" style="width:18px;height:18px">
+<path d="M4 7h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+<path d="M10 11v6M14 11v6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+<path d="M6 7l1 14h10l1-14" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+<path d="M9 7V4h6v3" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+</svg>
+</button>
+</div>
+</div>
+<div class="row" style="justify-content:space-between; margin-top:8px">
+<div class="small muted2">${state.lang==='fr'?'Total ligne':state.lang==='en'?'Line total':'إجمالي العنصر'}</div>
+<div style="font-weight:900">${escapeHtml(fmtMoney(line))}</div>
+</div>
+</div>
+`;
+}).join('');
+
+// qty change
+$$('input[data-qty]', itemsRoot).forEach(inp=>{
+inp.addEventListener('input', ()=> setQty(inp.dataset.qty, inp.value));
+inp.addEventListener('focus', ()=> inp.select());
+});
+// remove
+$$('[data-remove]', itemsRoot).forEach(btn=>{
+attachShine(btn);
+btn.addEventListener('click', ()=> removeFromCart(btn.dataset.remove));
+});
+}
+
+const sub = cartSubtotal();
+const fees = Math.round(sub * 0.02);
+const grand = sub + fees;
+$('#cartTotal').textContent = fmtMoney(sub);
+$('#cartFees').textContent = fmtMoney(fees);
+$('#cartGrand').textContent = fmtMoney(grand);
+}
+
+// Open cart
+$('#openCart').addEventListener('click', ()=> openModal('modalCart'));
+$('#openBuy').addEventListener('click', ()=> {
+document.getElementById('market').scrollIntoView({behavior:'smooth', block:'start'});
+setTimeout(()=> $('#search').focus(), 350);
+});
+
+$('#clearCart').addEventListener('click', ()=>{
+state.cart = [];
+renderCart();
+});
+
+// Checkout flow
+function buildOrder(){
+const items = state.cart.map(it=>{
+const p = productsData.find(x=>x.id===it.id);
+if(!p) return null;
+return {title: productTitle(p), qty: it.qty, unit: p.price[state.currency], author: p.author, id: p.id};
+}).filter(Boolean);
+
+const sub = cartSubtotal();
+const fees = Math.round(sub * 0.02);
+const grand = sub + fees;
+const orderId = 'TM' + Math.random().toString(16).slice(2,8).toUpperCase();
+return {orderId, items, currency: state.currency, sub, fees, grand};
+}
+
+$('#checkout').addEventListener('click', ()=>{
+if(state.cart.length === 0){
+toast(state.lang==='fr'?'Panier vide':state.lang==='en'?'Empty cart':'السلة فارغة',
+state.lang==='fr'?'Ajoutez un produit d’abord.':state.lang==='en'?'Add a product first.':'أضف منتجًا أولاً.');
+return;
+}
+const order = buildOrder();
+window.__tm_order = order;
+$('#payOrderTitle').textContent = (state.lang==='fr'?'Commande':'Order') + ' #' + order.orderId;
+$('#payOrderMeta').textContent = order.items.length + ' • ' + (state.lang==='fr'?'articles':'items');
+$('#payAmount').textContent = fmtMoney(order.grand);
+closeModal('modalCart');
+openModal('modalCheckout');
+});
+
+$('#openCheckout').addEventListener('click', ()=>{
+// Create a quick single-item order if empty
+if(state.cart.length === 0) addToCart(productsData[0].id);
+$('#openCart').click();
+setTimeout(()=> $('#checkout').click(), 200);
+});
+
+$('#payNow').addEventListener('click', ()=>{
+const order = window.__tm_order || buildOrder();
+const email = ($('#payEmail').value || '').trim();
+const method = $('#payMethod').value;
+const note = ($('#payNote').value || '').trim();
+
+// "Payment" success
+closeModal('modalCheckout');
+
+// Compose WhatsApp message
+const lang = state.lang;
+const lines = order.items.map(it=> `- ${it.title} ×${it.qty}`);
+let msg = "";
+if(lang==='ar'){
+msg = `مرحباً TrendMarketdz،\nتمت محاكاة الدفع لطلب #${order.orderId}\nالعملة: ${order.currency}\nالعناصر:\n${lines.join('\n')}\nالإجمالي: ${fmtMoney(order.grand)}\nطريقة الدفع: ${method}\nالبريد: ${email || '—'}\nملاحظة: ${note || '—'}\n\nأرجو تفعيل التسليم/الدعم.`;
+} else if(lang==='fr'){
+msg = `Bonjour TrendMarketdz,\nPaiement simulé pour la commande #${order.orderId}\nDevise: ${order.currency}\nArticles:\n${lines.join('\n')}\nTotal: ${fmtMoney(order.grand)}\nMéthode: ${method}\nEmail: ${email || '—'}\nNote: ${note || '—'}\n\nMerci de confirmer la livraison/support.`;
+} else {
+msg = `Hi TrendMarketdz,\nSimulated payment for order #${order.orderId}\nCurrency: ${order.currency}\nItems:\n${lines.join('\n')}\nTotal: ${fmtMoney(order.grand)}\nMethod: ${method}\nEmail: ${email || '—'}\nNote: ${note || '—'}\n\nPlease confirm delivery/support.`;
+}
+
+toast(
+lang==='fr'?'Paiement simulé réussi':lang==='en'?'Simulated payment successful':'تمت محاكاة الدفع بنجاح',
+lang==='fr'?'Ouverture de WhatsApp avec les détails…':lang==='en'?'Opening WhatsApp with details…':'سيتم فتح واتساب مع تفاصيل الطلب…'
+);
+
+setTimeout(()=>{
+window.open('https://wa.me/213699861542?text=' + encodeURIComponent(msg), '_blank', 'noopener');
+}, 650);
+
+// Clear cart after "payment"
+state.cart = [];
+renderCart();
+
+// Nudge dashboard metrics
+bumpDashboard();
+});
+
+// Create product (demo) => add to product list (in-memory)
+$('#openSell').addEventListener('click', ()=> openModal('modalSell'));
+$('#openSellMobile').addEventListener('click', ()=> { closeDrawer(); openModal('modalSell'); });
+
+$('#createProduct').addEventListener('click', ()=>{
+const name = ($('#sellName').value || '').trim();
+const cat = $('#sellCat').value;
+const price = Math.max(0, parseInt($('#sellPrice').value || '0', 10));
+const cur = $('#sellCurrency').value;
+const desc = ($('#sellDesc').value || '').trim();
+
+if(!name){
+toast(state.lang==='fr'?'Champ requis':state.lang==='en'?'Required field':'حقل مطلوب',
+state.lang==='fr'?'Veuillez saisir un nom.':state.lang==='en'?'Please enter a name.':'يرجى كتابة اسم المنتج.');
+$('#sellName').focus();
+return;
+}
+
+const id = 'u' + Math.random().toString(16).slice(2,10);
+const p = {
+id,
+cat,
+title: {ar: name, en: name, fr: name},
+author: 'You',
+rating: 5.0,
+price: {DZD: price, USD: Math.max(1, Math.round(price/170)), EUR: Math.max(1, Math.round(price/185))},
+tag: {ar:'منتج جديد', en:'New', fr:'Nouveau'},
+desc
+};
+productsData.unshift(p);
+closeModal('modalSell');
+toast(state.lang==='fr'?'Produit créé':state.lang==='en'?'Product created':'تم إنشاء المنتج',
+state.lang==='fr'?'Votre produit apparaît maintenant dans la liste.':state.lang==='en'?'Your product now appears in the list.':'سيظهر منتجك الآن في السوق.');
+renderProducts();
+// Jump to marketplace
+document.getElementById('market').scrollIntoView({behavior:'smooth', block:'start'});
+});
+
+// Choose plan => open WhatsApp
+$$('[data-action="choosePlan"]').forEach(btn=>{
+btn.addEventListener('click', ()=>{
+const plan = btn.dataset.plan;
+const lang = state.lang;
+const msg = (lang==='ar')
+? `مرحباً TrendMarketdz، أريد الاشتراك في باقة: ${plan}. أرجو تزويدي بخطوات البدء والتكلفة النهائية وتكاملات الدفع المتاحة.`
+: (lang==='fr')
+? `Bonjour TrendMarketdz, je souhaite souscrire au plan : ${plan}. Merci d'envoyer les étapes, le prix final et les intégrations de paiement disponibles.`
+: `Hi TrendMarketdz, I’d like to subscribe to the plan: ${plan}. Please share next steps, final pricing and available payment integrations.`;
+window.open('https://wa.me/213699861542?text=' + encodeURIComponent(msg), '_blank', 'noopener');
+});
+});
+
+// Roadmap + Enterprise
+$('#openRoadmap').addEventListener('click', ()=>{
+const lang = state.lang;
+const title = lang==='fr'?'Feuille de route':lang==='en'?'Roadmap':'خطة التنفيذ';
+const body = (lang==='ar')
+? `
+<div class="card pad soft" style="margin-bottom:12px">
+<b>المرحلة 1 — الأساس</b>
+<div class="muted small" style="margin-top:6px; line-height:1.9">
+تصميم UI/UX • صفحات السوق/المنتج • حسابات مستخدمين • سلة + طلبات • نظام تحميل آمن.
+</div>
+</div>
+<div class="card pad soft" style="margin-bottom:12px">
+<b>المرحلة 2 — الدفع + التراخيص</b>
+<div class="muted small" style="margin-top:6px; line-height:1.9">
+بوابات دفع • فواتير • Webhooks • مفاتيح ترخيص • مكافحة احتيال • سياسات استرداد.
+</div>
+</div>
+<div class="card pad soft">
+<b>المرحلة 3 — نمو عالمي</b>
+<div class="muted small" style="margin-top:6px; line-height:1.9">
+SEO • نظام تسويق • أفلييت • تطبيقات • API عام • لوحة تحكم متقدمة.
+</div>
+</div>
+`
+: (lang==='fr')
+? `
+<div class="card pad soft" style="margin-bottom:12px">
+<b>Phase 1 — Base</b>
+<div class="muted small" style="margin-top:6px; line-height:1.9">
+UI/UX • pages marché/produit • comptes • panier/commandes • livraison sécurisée.
+</div>
+</div>
+<div class="card pad soft" style="margin-bottom:12px">
+<b>Phase 2 — Paiement + licences</b>
+<div class="muted small" style="margin-top:6px; line-height:1.9">
+Passerelles • factures • webhooks • clés licence • anti-fraude • remboursements.
+</div>
+</div>
+<div class="card pad soft">
+<b>Phase 3 — Croissance</b>
+<div class="muted small" style="margin-top:6px; line-height:1.9">
+SEO • marketing • affiliation • apps • API publique • dashboard avancé.
+</div>
+</div>
+`
+: `
+<div class="card pad soft" style="margin-bottom:12px">
+<b>Phase 1 — Foundation</b>
+<div class="muted small" style="margin-top:6px; line-height:1.9">
+UI/UX • marketplace/product pages • accounts • cart/orders • secure delivery.
+</div>
+</div>
+<div class="card pad soft" style="margin-bottom:12px">
+<b>Phase 2 — Payments + Licensing</b>
+<div class="muted small" style="margin-top:6px; line-height:1.9">
+Gateways • invoices • webhooks • license keys • anti-fraud • refunds.
+</div>
+</div>
+<div class="card pad soft">
+<b>Phase 3 — Global Growth</b>
+<div class="muted small" style="margin-top:6px; line-height:1.9">
+SEO • marketing • affiliate • apps • public API • advanced dashboards.
+</div>
+</div>
+`;
+showInfo(title, body);
+});
+
+$('#openEnterprise').addEventListener('click', ()=>{
+const lang = state.lang;
+const msg = (lang==='ar')
+? "مرحباً TrendMarketdz، أريد عرضًا مخصصًا (Enterprise): API + بوابات دفع + لوحة تحكم متقدمة + دعم واتساب. ما هي الخطوات؟"
+: (lang==='fr')
+? "Bonjour TrendMarketdz, je souhaite une offre sur-mesure (Enterprise): API + paiements + dashboard + support WhatsApp. Quelles étapes ?"
+: "Hi TrendMarketdz, I’d like a custom Enterprise offer: API + payments + dashboard + WhatsApp support. What are the next steps?";
+window.open('https://wa.me/213699861542?text=' + encodeURIComponent(msg), '_blank', 'noopener');
+});
+
+// Demo buttons
+$('#openDemo').addEventListener('click', ()=>{
+const lang = state.lang;
+const title = lang==='fr'?'Visite rapide':lang==='en'?'Quick tour':'عرض سريع';
+const body = (lang==='ar')
+? "جرّب: <b>فلترة السوق</b>، <b>أضف للسلة</b>، ثم <b>إكمال الشراء (تجريبي)</b>. بعد ذلك سيتم فتح واتساب برسالة تفاصيل الطلب."
+: (lang==='fr')
+? "Testez : <b>filtres</b>, <b>ajout au panier</b>, puis <b>checkout (démo)</b>. Ensuite WhatsApp s’ouvre avec les détails."
+: "Try: <b>filters</b>, <b>add to cart</b>, then <b>checkout (demo)</b>. WhatsApp will open with order details.";
+showInfo(title, body);
+});
+
+// Subscribe
+$('#subscribe').addEventListener('click', ()=>{
+const email = ($('#email').value || '').trim();
+if(!email || !email.includes('@')){
+toast(state.lang==='fr'?'Email invalide':state.lang==='en'?'Invalid email':'بريد غير صالح',
+state.lang==='fr'?'Veuillez saisir un email.':state.lang==='en'?'Please enter an email.':'يرجى إدخال بريد إلكتروني صحيح.');
+$('#email').focus();
+return;
+}
+toast(state.lang==='fr'?'Merci !':state.lang==='en'?'Thanks!':'شكرًا!',
+state.lang==='fr'?'Abonnement enregistré (démo).':state.lang==='en'?'Subscription saved (demo).':'تم تسجيل الاشتراك (تجريبي).');
+$('#email').value = '';
+});
+
+// Toast
+let toastTimer = null;
+function toast(title, msg){
+$('#toastTitle').textContent = title;
+$('#toastMsg').textContent = msg;
+$('#toast').classList.add('show');
+clearTimeout(toastTimer);
+toastTimer = setTimeout(()=> $('#toast').classList.remove('show'), 4200);
+}
+$('#toastClose').addEventListener('click', ()=> $('#toast').classList.remove('show'));
+
+// Dashboard metrics (demo)
+function rand(min, max){ return Math.random()*(max-min)+min; }
+function bumpDashboard(){
+const net = Math.round(rand(1200, 9800));
+const orders = Math.round(rand(8, 64));
+const conv = rand(1.8, 6.4);
+$('#netRevenue').textContent = (state.currency==='DZD' ? fmtMoney(net*80) : fmtMoney(net));
+$('#todayOrders').textContent = String(orders);
+$('#conversion').textContent = conv.toFixed(1) + '%';
+
+$('#netNote').textContent = (state.lang==='ar'?'آخر تحديث: الآن':state.lang==='fr'?'Mis à jour: maintenant':'Updated: now');
+$('#orderNote').textContent = (state.lang==='ar'?'قنوات متعددة + كوبونات':state.lang==='fr'?'Multi-canaux + coupons':'Multi-channel + coupons');
+$('#convNote').textContent = (state.lang==='ar'?'تحسين صفحات المنتج':state.lang==='fr'?'Optimisation pages':'Product page optimization');
+
+$('#netBar').style.setProperty('--w', Math.round(rand(48, 86)) + '%');
+$('#orderBar').style.setProperty('--w', Math.round(rand(34, 78)) + '%');
+$('#convBar').style.setProperty('--w', Math.round(rand(28, 72)) + '%');
+
+// also update hero KPIs
+$('#kpiSales').textContent = (state.currency==='DZD' ? fmtMoney(net*60) : fmtMoney(net));
+$('#kpiDownloads').textContent = String(Math.round(rand(60, 520)));
+$('#kpiConv').textContent = conv.toFixed(1) + '%';
+$('#kpiSupport').textContent = String(Math.round(rand(2, 7)));
+}
+$('#refreshMetrics').addEventListener('click', ()=>{
+bumpDashboard();
+toast(state.lang==='fr'?'Actualisé':state.lang==='en'?'Refreshed':'تم التحديث',
+state.lang==='fr'?'Métriques mises à jour.':state.lang==='en'?'Metrics updated.':'تم تحديث المؤشرات.');
+});
+
+$('#downloadReport').addEventListener('click', ()=>{
+const content = [
+`TrendMarketdz Report (demo)`,
+`Lang: ${state.lang}`,
+`Currency: ${state.currency}`,
+`Generated: ${new Date().toISOString()}`,
+`---`,
+`NetRevenue: ${$('#netRevenue').textContent}`,
+`Orders: ${$('#todayOrders').textContent}`,
+`Conversion: ${$('#conversion').textContent}`
+].join('\n');
+
+const blob = new Blob([content], {type:'text/plain;charset=utf-8'});
+const a = document.createElement('a');
+a.href = URL.createObjectURL(blob);
+a.download = 'trendmarketdz-report-demo.txt';
+document.body.appendChild(a);
+a.click();
+setTimeout(()=>{
+URL.revokeObjectURL(a.href);
+a.remove();
+}, 0);
+});
+
+// Plan prices based on currency (approx conversion)
+function updatePlanPrices(){
+const c = state.currency;
+const convert = (usd)=>{
+if(c==='USD') return usd;
+if(c==='EUR') return Math.round(usd*0.92);
+return Math.round(usd*170);
+};
+$$('[data-plan-price]').forEach(el=>{
+const usd = Number(el.getAttribute('data-plan-price') || '0');
+el.textContent = convert(usd).toLocaleString(state.lang==='ar'?'ar-DZ':(state.lang==='fr'?'fr-FR':'en-US'));
+});
+}
+
+// Open modals
+$('#openCart').addEventListener('click', ()=> openModal('modalCart'));
+$('#openSell').addEventListener('click', ()=> openModal('modalSell'));
+
+// Bind open cart from header?
+// Already on marketplace controls
+
+// Subscribe + quick links
+$('#openBuy').addEventListener('click', ()=>{});
+
+// Modal open from hero checkout
+// Already openCheckout wired
+
+// Outside click to close overlays (optional)
+$$('.overlay').forEach(ov=>{
+ov.addEventListener('click', (e)=>{
+if(e.target === ov){
+ov.classList.remove('open');
+document.body.style.overflow = '';
+}
+});
+});
+
+// Stats animation
+function animateCount(el, to, suffix=''){
+const from = 0;
+const dur = 900;
+const start = performance.now();
+function step(now){
+const p = Math.min(1, (now-start)/dur);
+const val = Math.floor(from + (to-from)* (1 - Math.pow(1-p, 3)));
+el.textContent = (to>=1000 ? ('+'+val.toLocaleString(state.lang==='ar'?'ar-DZ':(state.lang==='fr'?'fr-FR':'en-US'))) : ('+'+val)) + suffix;
+if(p<1) requestAnimationFrame(step);
+else el.textContent = ('+'+to.toLocaleString(state.lang==='ar'?'ar-DZ':(state.lang==='fr'?'fr-FR':'en-US'))) + suffix;
+}
+requestAnimationFrame(step);
+}
+
+function init(){
+// Language
+setLang(state.lang);
+
+// Initial render
+renderProducts();
+renderCart();
+updatePlanPrices();
+
+// Metrics
+bumpDashboard();
+
+// Hero stats
+animateCount($('#stat1'), 125000, '');
+$('#stat2').textContent = '120ms';
+$('#stat3').textContent = '24/7';
+
+// Support: open WhatsApp
+$('#openSupport').addEventListener('click', ()=>{});
+
+// Buttons: Sell and Cart open
+$('#openSell').addEventListener('click', ()=> openModal('modalSell'));
+$('#openCart').addEventListener('click', ()=> openModal('modalCart'));
+
+// Open sell from nav
+$('#openSellMobile').addEventListener('click', ()=> openModal('modalSell'));
+
+// Header CTA: open demo buy is already set
+$('#openBuy').addEventListener('click', ()=>{});
+
+// Checkout shortcut button
+$('#openCheckout').addEventListener('click', ()=>{});
+
+// Update shine attachment for dynamically created buttons
+const mo = new MutationObserver(()=>{
+$$('.btn').forEach(b=>{
+if(b.__shineAttached) return;
+attachShine(b);
+b.__shineAttached = true;
+});
+});
+mo.observe(document.body, {childList:true, subtree:true});
+
+// Save initial
+$('#currency').value = state.currency;
+
+// Support modal open from sidebar
+// (already wired)
+}
+
+// open modals from other buttons
+$('#openSell').addEventListener('click', ()=> openModal('modalSell'));
+$('#openSellMobile').addEventListener('click', ()=> openModal('modalSell'));
+$('#openCart').addEventListener('click', ()=> openModal('modalCart'));
+
+// Dedicated "Start selling" in header already wired
+
+// Handle direct "Open Checkout" from hero panel (button inside mock)
+$('#openCheckout').addEventListener('click', ()=>{});
+
+// Ensure modal buttons open correct modals
+$('#openCart').addEventListener('click', ()=> openModal('modalCart'));
+
+// Set up "Open checkout" from mock and "Open cart" from marketplace
+$('#openCheckout').addEventListener('click', ()=>{
+if(state.cart.length === 0) addToCart(productsData[0].id);
+openModal('modalCart');
+});
+
+// Init info for support button in sidebar
+$('#openSupport').addEventListener('click', ()=>{});
+
+// Ensure Sell button opens modal
+$('#openSell').addEventListener('click', ()=> openModal('modalSell'));
+
+// Hook additional open buttons
+$('#openCheckout').addEventListener('click', ()=>{
+// second click already, ignore
+});
+
+// Fix duplicate listeners by resetting with once? We'll keep light: no harm.
+
+// Support: build correct message per language
+$('#openSupport').addEventListener('click', ()=>{
+const lang = state.lang;
+const msg = (lang==='ar')
+? "مرحباً TrendMarketdz، أحتاج مساعدة بخصوص المنصة."
+: (lang==='fr')
+? "Bonjour TrendMarketdz, j'ai besoin d'aide concernant la plateforme."
+: "Hi TrendMarketdz, I need help regarding the platform.";
+window.open('https://wa.me/213699861542?text=' + encodeURIComponent(msg), '_blank', 'noopener');
+});
+
+// Trigger init
+init();
+
+// Open cart button in nav already
+$('#openCart').addEventListener('click', ()=>{});
+
+// Sell CTA in hero uses same button id openSell
+// Search query sync between desktop/mobile
+function syncSearch(src, dest){
+dest.value = src.value;
+setQuery(src.value);
+}
+$('#search').addEventListener('input', ()=> syncSearch($('#search'), $('#searchMobile')));
+$('#searchMobile').addEventListener('input', ()=> syncSearch($('#searchMobile'), $('#search')));
+
+// Newsletter enter
+$('#email').addEventListener('keydown', (e)=>{
+if(e.key === 'Enter') $('#subscribe').click();
+});
+
+// Pay email default from newsletter if present
+$('#openCheckout').addEventListener('click', ()=>{
+const email = ($('#email').value||'').trim();
+if(email) $('#payEmail').value = email;
+});
+
+// Prevent double-lingering hint
+setTimeout(()=> waHint.classList.add('show'), 1200);
+
+// Update "Try pay" button click to open checkout with at least 1 item
+$('#openCheckout').addEventListener('click', ()=>{
+if(state.cart.length === 0) addToCart(productsData[0].id);
+openModal('modalCart');
+setTimeout(()=> $('#checkout').click(), 250);
+});
+
+// Global close on overlay click already
+
+// Fix: Ensure "Open checkout" doesn't stack actions
+// (No further action)
+
+})();
+</script>
+</body>
+</html>
