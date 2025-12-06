@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>YEHUSH — Secret de beauté de la nature | Boutique en ligne</title>
+  <meta name="description" content="YEHUSH, cosmétiques 100 % naturels et artisanaux de Manga, Burkina Faso : beurre de karité, beurre de mangue, huile de sésame, beurre de cacao, beurre de gingembre." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            creme: {
+              50: '#FFFDF8',
+              100: '#FBF6EB',
+              200: '#F5ECD4'
+            },
+            olive: {
+              50: '#F1F5EC',
+              100: '#E4EEDB',
+              300: '#B4C79A',
+              500: '#7D9C5B',
+              700: '#56723E'
+            },
+            or: {
+              100: '#FEF3C7',
+              200: '#FDE68A',
+              400: '#F5C25A',
+              500: '#D4AF37'
+            },
+            brun: {
+              700: '#5A4632',
+              900: '#3B2E22'
+            }
+          },
+          boxShadow: {
+            soft: '0 10px 30px rgba(0,0,0,0.08)'
+          },
+          backgroundImage: {
+            'grain': 'radial-gradient(circle at 20% 10%, rgba(212,175,55,0.12), transparent 35%), radial-gradient(circle at 80% 30%, rgba(125,156,91,0.12), transparent 40%), radial-gradient(circle at 40% 80%, rgba(90,70,50,0.10), transparent 45%)'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    :root{
+      --radius:18px;
+    }
+    *{box-sizing:border-box}
+    html,body{scroll-behavior:smooth}
+    body{font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial,'Noto Sans',sans-serif;background:#FBF6EB;color:#3B2E22}
+    .glass{backdrop-filter:saturate(140%) blur(8px);background:rgba(255,255,255,0.65)}
+    .btn{transition:transform .2s ease, box-shadow .2s ease}
+    .btn:hover{transform:translateY(-2px)}
+    .card{border-radius:var(--radius); background:#fff; box-shadow:0 10px 30px rgba(0,0,0,.06); overflow:hidden}
+    .fade-up{opacity:0; transform:translateY(20px); transition:all .6s ease}
+    .fade-up.appear{opacity:1; transform:translateY(0)}
+    .ring-olive{box-shadow:0 0 0 8px rgba(125,156,91,0.08)}
+    .grad-hero{background:linear-gradient(135deg, #FBF6EB 0%, #FFFDF8 40%, #E4EEDB 100%)}
+    .grad-cta{background:linear-gradient(135deg,#D4AF37,#7D9C5B); color:#fff}
+    .grad-cta:hover{filter:brightness(1.05)}
+    .badge{background:linear-gradient(135deg,#F5C25A22,#7D9C5B22); border:1px solid rgba(212,175,55,.35)}
+    .icon-pill{width:64px;height:64px;border-radius:16px;display:flex;align-items:center;justify-content:center;background:linear-gradient(145deg,#FEF9E7,#EAF4E0); box-shadow:inset 0 1px 0 rgba(255,255,255,.6), 0 6px 18px rgba(125,156,91,.15)}
+    .price{color:#56723E;font-weight:700}
+    .whatsapp{background:#25D366;color:white}
+    .whatsapp:hover{filter:brightness(1.05)}
+    .input{border:1px solid rgba(90,70,50,.15); border-radius:12px; padding:.9rem 1rem; background:#fff; outline:none; transition:border .2s, box-shadow .2s}
+    .input:focus{border-color:#7D9C5B; box-shadow:0 0 0 4px rgba(125,156,91,.15)}
+    .label{font-size:.9rem; color:#5A4632; margin-bottom:.4rem}
+    .toast{position:fixed; bottom:20px; right:20px; background:#3B2E22; color:#fff; padding:.85rem 1rem; border-radius:12px; box-shadow:0 10px 24px rgba(0,0,0,.2); opacity:0; transform:translateY(10px); transition:all .3s}
+    .toast.show{opacity:1; transform:translateY(0)}
+    .footer-link:hover{color:#7D9C5B}
+    .blur-behind{backdrop-filter:blur(10px)}
+    .sticky-nav{position:sticky; top:0; z-index:40}
+    .hero-img{object-fit:cover}
+    @media (min-width:1024px){
+      .hero-grid{grid-template-columns: 1.1fr .9fr}
+    }
+  </style>
+</head>
+<body class="bg-creme-100">
+  <header class="sticky-nav glass border-b border-white/40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl flex items-center justify-center" style="background:linear-gradient(135deg,#D4AF37,#7D9C5B); box-shadow:0 8px 18px rgba(212,175,55,.25)">
+          <span class="text-white font-semibold">Y</span>
+        </div>
+        <div>
+          <h1 class="text-lg font-semibold text-brun-900">YEHUSH</h1>
+          <p class="text-xs text-brun-700/70 -mt-1">Secret de beauté de la nature • Manga, Burkina Faso</p>
+        </div>
+      </div>
+      <nav class="hidden md:flex items-center gap-6 text-sm">
+        <a href="#produits" class="hover:text-olive-700">Nos produits</a>
+        <a href="#bienfaits" class="hover:text-oliv
