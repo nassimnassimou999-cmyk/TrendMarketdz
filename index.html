@@ -1,56 +1,16 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>YEHUSH — Secret de beauté de la nature | Boutique en ligne</title>
-  <meta name="description" content="YEHUSH, cosmétiques 100 % naturels et artisanaux de Manga, Burkina Faso : beurre de karité, beurre de mangue, huile de sésame, beurre de cacao, beurre de gingembre." />
+  <title>YEHUSH — متجر منتجات طبيعية</title>
+  <meta name="description" content="YEHUSH — منتجات تجميلية وطبيعية من Manga, Burkina Faso. متجر تجريبي." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            creme: {
-              50: '#FFFDF8',
-              100: '#FBF6EB',
-              200: '#F5ECD4'
-            },
-            olive: {
-              50: '#F1F5EC',
-              100: '#E4EEDB',
-              300: '#B4C79A',
-              500: '#7D9C5B',
-              700: '#56723E'
-            },
-            or: {
-              100: '#FEF3C7',
-              200: '#FDE68A',
-              400: '#F5C25A',
-              500: '#D4AF37'
-            },
-            brun: {
-              700: '#5A4632',
-              900: '#3B2E22'
-            }
-          },
-          boxShadow: {
-            soft: '0 10px 30px rgba(0,0,0,0.08)'
-          },
-          backgroundImage: {
-            'grain': 'radial-gradient(circle at 20% 10%, rgba(212,175,55,0.12), transparent 35%), radial-gradient(circle at 80% 30%, rgba(125,156,91,0.12), transparent 40%), radial-gradient(circle at 40% 80%, rgba(90,70,50,0.10), transparent 45%)'
-          }
-        }
-      }
-    }
-  </script>
   <style>
-    :root{
-      --radius:18px;
-    }
+    :root{ --radius:18px }
     *{box-sizing:border-box}
     html,body{scroll-behavior:smooth}
     body{font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial,'Noto Sans',sans-serif;background:#FBF6EB;color:#3B2E22}
@@ -61,40 +21,111 @@
     .fade-up{opacity:0; transform:translateY(20px); transition:all .6s ease}
     .fade-up.appear{opacity:1; transform:translateY(0)}
     .ring-olive{box-shadow:0 0 0 8px rgba(125,156,91,0.08)}
-    .grad-hero{background:linear-gradient(135deg, #FBF6EB 0%, #FFFDF8 40%, #E4EEDB 100%)}
     .grad-cta{background:linear-gradient(135deg,#D4AF37,#7D9C5B); color:#fff}
-    .grad-cta:hover{filter:brightness(1.05)}
-    .badge{background:linear-gradient(135deg,#F5C25A22,#7D9C5B22); border:1px solid rgba(212,175,55,.35)}
-    .icon-pill{width:64px;height:64px;border-radius:16px;display:flex;align-items:center;justify-content:center;background:linear-gradient(145deg,#FEF9E7,#EAF4E0); box-shadow:inset 0 1px 0 rgba(255,255,255,.6), 0 6px 18px rgba(125,156,91,.15)}
+    .badge{background:linear-gradient(135deg,#F5C25A22,#7D9C5B22); border:1px solid rgba(212,175,55,.35); padding:.2rem .5rem; border-radius:8px}
     .price{color:#56723E;font-weight:700}
-    .whatsapp{background:#25D366;color:white}
-    .whatsapp:hover{filter:brightness(1.05)}
-    .input{border:1px solid rgba(90,70,50,.15); border-radius:12px; padding:.9rem 1rem; background:#fff; outline:none; transition:border .2s, box-shadow .2s}
-    .input:focus{border-color:#7D9C5B; box-shadow:0 0 0 4px rgba(125,156,91,.15)}
-    .label{font-size:.9rem; color:#5A4632; margin-bottom:.4rem}
     .toast{position:fixed; bottom:20px; right:20px; background:#3B2E22; color:#fff; padding:.85rem 1rem; border-radius:12px; box-shadow:0 10px 24px rgba(0,0,0,.2); opacity:0; transform:translateY(10px); transition:all .3s}
     .toast.show{opacity:1; transform:translateY(0)}
-    .footer-link:hover{color:#7D9C5B}
-    .blur-behind{backdrop-filter:blur(10px)}
-    .sticky-nav{position:sticky; top:0; z-index:40}
-    .hero-img{object-fit:cover}
-    @media (min-width:1024px){
-      .hero-grid{grid-template-columns: 1.1fr .9fr}
-    }
+    @media (min-width:1024px){ .hero-grid{grid-template-columns:1.1fr .9fr} }
   </style>
 </head>
 <body class="bg-creme-100">
-  <header class="sticky-nav glass border-b border-white/40">
+  <header class="sticky top-0 z-40 glass border-b border-white/40">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
       <div class="flex items-center gap-3">
         <div class="w-10 h-10 rounded-xl flex items-center justify-center" style="background:linear-gradient(135deg,#D4AF37,#7D9C5B); box-shadow:0 8px 18px rgba(212,175,55,.25)">
-          <span class="text-white font-semibold">Y</span>
+          <span class="text-white font-semibold">ي</span>
         </div>
         <div>
           <h1 class="text-lg font-semibold text-brun-900">YEHUSH</h1>
-          <p class="text-xs text-brun-700/70 -mt-1">Secret de beauté de la nature • Manga, Burkina Faso</p>
+          <p class="text-xs text-brun-700/70 -mt-1">سر الجمال من الطبيعة • Manga, Burkina Faso</p>
         </div>
       </div>
       <nav class="hidden md:flex items-center gap-6 text-sm">
-        <a href="#produits" class="hover:text-olive-700">Nos produits</a>
-        <a href="#bienfaits" class="hover:text-oliv
+        <a href="#produits" class="hover:text-olive-700">منتجاتنا</a>
+        <a href="#contact" class="hover:text-olive-700">تواصل</a>
+        <a href="#" id="cart-toggle" class="hover:text-olive-700">السلة (<span id="cart-count">0</span>)</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="py-8">
+    <section class="max-w-7xl mx-auto px-4 py-10">
+      <div class="grid lg:grid-cols-2 gap-8 items-center">
+        <div>
+          <h2 class="text-3xl font-bold mb-4">منتجات طبيعية وعضوية</h2>
+          <p class="text-brun-700/80 mb-6">نقدم منتجات مختارة بعناية من Manga — زبدة الشيا، زيوت طبيعية، ومكملات نباتية. جودة وحلال.</p>
+          <a href="#produits" class="btn grad-cta px-5 py-3 rounded-md inline-block">تسوق الآن</a>
+        </div>
+        <div class="card p-4">
+          <img src="assets/products/nassim-zawzi-60capsules.svg" alt="NaSsim Zawzi" class="w-full h-64 object-cover hero-img rounded-md">
+        </div>
+      </div>
+    </section>
+
+    <!-- منتجات -->
+    <section id="produits" class="max-w-7xl mx-auto px-4 py-12">
+      <h2 class="text-2xl font-semibold text-brun-900 mb-6">منتجاتنا</h2>
+      <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- البطاقات ستُحقَن هنا عبر JS -->
+      </div>
+    </section>
+
+    <!-- سلة مصغرة -->
+    <aside id="mini-cart" class="fixed left-4 top-24 w-80 bg-white card shadow p-3 hidden lg:block"></aside>
+
+  </main>
+
+  <footer class="mt-12 border-t bg-white/40">
+    <div class="max-w-7xl mx-auto px-4 py-8 text-sm text-brun-700">
+      <div>© 2026 YEHUSH — كل الحقوق محفوظة</div>
+    </div>
+  </footer>
+
+  <div class="toast" aria-hidden="true"></div>
+
+  <script>
+    // تحميل وعرض المنتجات من data/products.json
+    async function loadProducts() {
+      try {
+        const res = await fetch('data/products.json');
+        const products = await res.json();
+        const grid = document.getElementById('products-grid');
+        grid.innerHTML = products.map(p => `
+          <article class="card p-4 flex flex-col">
+            <img src="${p.image}" alt="${p.title_ar}" class="w-full h-48 object-cover hero-img rounded-md mb-4">
+            <div class="flex-1">
+              <h3 class="text-lg font-semibold text-brun-900">${p.title_ar}</h3>
+              <p class="text-sm text-brun-700/80 mt-2">${p.description_ar}</p>
+            </div>
+            <div class="mt-4 flex items-center justify-between">
+              <div>
+                <div class="text-sm text-brun-700">${p.badges.map(b=>`<span class="badge ml-2">${b}</span>`).join(' ')}</div>
+                <div class="price text-xl mt-1">${p.price} ${p.currency}</div>
+              </div>
+              <div>
+                <button class="btn grad-cta px-4 py-2 rounded-md text-sm" onclick="addToCart('${p.id}')">أضف إلى السلة</button>
+                <a class="btn whatsapp px-3 py-2 rounded-md text-sm ml-2" target="_blank" href="https://wa.me/">واتساب</a>
+              </div>
+            </div>
+          </article>
+        `).join('');
+        updateCartCount();
+      } catch (err) {
+        console.error('Failed to load products', err);
+      }
+    }
+    loadProducts();
+
+    function updateCartCount(){
+      const c = JSON.parse(localStorage.getItem('tm_cart_v1')||'[]').reduce((s,i)=>s+i.qty,0);
+      document.getElementById('cart-count').textContent = c;
+    }
+
+    // cart functions are in assets/js/cart.js — we load it dynamically
+    const s = document.createElement('script');
+    s.src = 'assets/js/cart.js';
+    document.body.appendChild(s);
+  </script>
+</body>
+</html>
